@@ -1,6 +1,9 @@
 import React from "react";
 import "./Header.css";
-const Header = () => {
+const Header = ({setLanguage}) => {
+  const handleLanguageChange = (event) => {
+    setLanguage(event.target.value);
+  };
   return (
     <div className="header-container">
       <nav className="navbar">
@@ -21,7 +24,7 @@ const Header = () => {
       
       <div className="language-dropdown">
         Language:
-        <select>
+        <select onChange={handleLanguageChange}>
           <option value="en">English</option>
           <option value="es">Español</option>
         </select>

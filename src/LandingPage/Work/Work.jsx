@@ -1,6 +1,6 @@
 import './Work.css'
 
-const Work = () => {
+const Work = ({language}) => {
   return (
     <div className='workContainer'>
       <div className="leftLine">
@@ -9,10 +9,16 @@ const Work = () => {
       <div className="newdescription">
         <div className="howToDo">How we do it</div>
         <div className="myWorkdescription">
-          I am Carlos Carvajal, a certified mechanic with 10 years of experience
-          working at Hertz. Now, I am starting my own mobile automotive service
-          business in Orlando, Florida. With VIC, I aim to provide you with the
-          convenience of high-quality service right at your home or workplace
+          {
+            language ==='es'?
+            <span>
+            Con un equipo de herramientas y materiales de primera calidad, llegamos hasta tu ubicación para realizar cambios de aceite, filtros y fluidos de manera rápida y eficiente. Nuestro objetivo es proporcionarte un servicio confiable y conveniente sin que tengas que salir de casa.
+            </span>
+            :
+            <span>
+            With a set of top-quality tools and materials, we come to your location to perform oil changes, filter replacements, and fluid services quickly and efficiently. Our goal is to provide you with reliable and convenient service without you having to leave your home.
+            </span>
+          }
         </div>
       </div>
       <div className="bottomLine">

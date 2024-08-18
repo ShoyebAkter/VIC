@@ -1,6 +1,6 @@
 import "./Pricing.css";
 
-const Pricing = () => {
+const Pricing = ({language}) => {
   return (
     <div className="pricingContainer">
       <div className="centerLine">
@@ -12,9 +12,15 @@ const Pricing = () => {
       </div>
       <div className="priceTag">Pricing</div>
       <div className="priceDescription">
-        Our prices are competitive and transparent. We offer various packages
+      {
+        language ==='es'?
+        <span>Nuestros precios son competitivos y transparentes. Ofrecemos diferentes paquetes y servicios personalizados según tus necesidades. Contáctanos para obtener una cotización detallada y sin compromiso.</span>
+        :
+        <span>Our prices are competitive and transparent. We offer various packages
         and personalized services according to your needs. Contact us for a
-        detailed and no-obligation quote
+        detailed and no-obligation quote</span>
+      }
+        
       </div>
       <div className="contactButton">Contact Us</div>
     </div>
