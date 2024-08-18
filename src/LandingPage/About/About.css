@@ -1,0 +1,48 @@
+.about-container {
+    background-image: url('BG2.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Adjust the height as needed */
+    color: white; /* Ensure text is visible */
+    padding: 20px; /* Optional padding */
+    position: relative;
+  }
+  .description{
+    width: 300px;
+    background-color: black;
+    padding: 10px;
+  }
+  .aboutme{
+    color: yellow;
+    text-align: left;
+  }
+  .mydescription{
+    text-align: left;
+    color: rgb(180, 179, 176);
+  }
+  .aboutLine {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+  }
+  
+  .aboutLeftline {
+    width: 15px;
+    height: 30px;
+    background-color: yellow;
+    margin: 5px 0;
+  }
+  .aboutTopLine{
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    display: flex;
+    gap: 10px;
+  }
+  .aboutrightline{
+    width: 15px;
+    height: 60px;
+    background-color: yellow;
+    margin: 5px 0;
+  }
+  

@@ -1,0 +1,42 @@
+.mapContainer {
+    background-image: url('BG3.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh; /* Adjust the height as needed */
+    color: white; /* Ensure text is visible */
+    padding: 20px; /* Optional padding */
+    
+  }
+  .infoDiv{
+    position: absolute;
+    top: 50%; /* Move it 50% down from the top */
+  right: 0; /* Align it to the right */
+  transform: translateY(-50%);
+  }
+ 
+  .workSection{
+    width: 300px;
+    margin-right: 20px;
+    padding: 10px; 
+    
+  }
+  .workPlace{
+    color: yellow;
+    text-align: right;
+  }
+  .workDescription{
+    text-align: right;
+    color: rgb(180, 179, 176);
+  }
+  .workLine{
+    position: absolute;
+    top: 1px;
+    right: 0px;
+  }
+  .rightline{
+    width: 15px;
+    height: 30px;
+    background-color: yellow;
+    margin: 5px 0;
+  }

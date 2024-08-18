@@ -1,0 +1,67 @@
+.pricingContainer{
+   
+    background-image: url('BG5.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 50vh; /* Adjust the height as needed */
+    color: white; /* Ensure text is visible */
+    padding: 20px; /* Optional padding */
+    
+
+}
+.priceTag{
+    text-align: center;
+    color: yellow;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 100;
+}
+.priceDescription{
+    text-align: center;
+    margin-inline: 40px;
+}
+.contactButton{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    margin-inline: auto;
+    background-color: yellow;
+    color: black;
+    width: 90px;
+    border-radius: 5px;
+    padding-inline: 5px;
+}
+.centerLine {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .centeryellowline {
+    width: 40px;
+    height: 15px;
+    background-color: yellow;
+    margin: 5px 0;
+  }
+.topLine{
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    display: flex;
+    gap: 10px;
+  }
+  .toprightline1{
+    width: 15px;
+    height: 60px;
+    background-color: yellow;
+    margin: 5px 0;
+  }
+  .toprightline2{
+    width: 10px;
+    height: 60px;
+    background-color: yellow;
+    margin: 5px 0;
+  }

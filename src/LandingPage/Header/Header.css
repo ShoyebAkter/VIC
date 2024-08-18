@@ -1,0 +1,107 @@
+.header-container {
+  background-image: url('/BG1.jpg'); /* Reference your image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh; /* Adjust the height as needed */
+  color: white; /* Ensure text is visible */
+  padding: 20px; /* Optional padding */
+  margin-bottom: 30px;
+}
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 30px;
+    width: 100%;
+  }
+  
+  .nav-item {
+    color: yellow;
+    font-weight: 300;
+  }
+  
+  
+  .nav-item.button {
+    background-color: yellow;
+    padding-inline: 10px;
+    border-radius: 5px;
+    color: black;
+  }
+  
+  .centered-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: yellow;
+    font-size: 36px;
+    text-align: center;
+  }
+  .vic{
+    font-weight: 700;
+  }
+  .bookButtonArea{
+    position: absolute;
+    bottom: 20%;
+    left: 45%;
+  }
+  .bookButton{
+    background-color: yellow;
+    color: black;
+    margin-inline: auto;
+    border-radius: 5px;
+    padding-inline: 10px;
+    font-weight: 700;
+  }
+  .bottom-lines {
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .line {
+    width: 15px;
+    height: 60px;
+    background-color: yellow;
+    margin: 5px 0;
+  }
+  .language-dropdown {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 8px;
+    z-index: 100; /* Ensures the dropdown stays above other elements */
+  }
+  
+  .language-dropdown select {
+    margin-left: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 2px;
+    font-size: 8px;
+    cursor: pointer;
+    border-color: white;
+  }
+
+  .arrow-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column; /* Spacing between arrows */
+    width: 100px; /* Adjust width based on your design */
+    margin-top: 20px;
+  }
+  
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid yellow; /* Arrow color */
+    margin: 5px;
+    margin-inline: auto;
+  }
