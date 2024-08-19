@@ -7,13 +7,14 @@ const Header = ({setLanguage}) => {
   return (
     <div className="header-container">
       <nav className="navbar">
+      <div><img className="headerLogo" src="/logo2.png" alt=""/></div>
         <div className="nav-item highlight">About VIC</div>
         <div className="nav-item">Where We Work</div>
         <div className="nav-item highlight">Services</div>
         <div className="nav-item highlight">Pricing</div>
         <div className="nav-item button">Book A Consultation</div>
       </nav>
-      <div className="centered-title"> <span className="vic">VIC</span> Auto Services</div>
+      <div className="centered-title"><img className="vic" src="/logo1.png" alt=""/></div>
       <div className="bookButtonArea">
       <div className="bookButton">Book Now</div>
       <div class="arrow-container">

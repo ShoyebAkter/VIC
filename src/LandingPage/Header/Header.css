@@ -17,7 +17,9 @@
     gap: 30px;
     width: 100%;
   }
-  
+  .headerLogo{
+    width: 20px;
+  }
   .nav-item {
     color: yellow;
     font-weight: 300;
@@ -26,7 +28,7 @@
   
   .nav-item.button {
     background-color: yellow;
-    padding-inline: 10px;
+    padding-inline: 5px;
     border-radius: 5px;
     color: black;
   }
@@ -39,9 +41,10 @@
     color: yellow;
     font-size: 36px;
     text-align: center;
+    margin-top: 20px;
   }
   .vic{
-    font-weight: 700;
+    width: 300px;
   }
   .bookButtonArea{
     position: absolute;

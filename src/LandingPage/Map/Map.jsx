@@ -2,6 +2,9 @@ import "./Map.css";
 const Map = ({language}) => {
   return (
     <div className="mapContainer">
+    <div className="orlando">
+    <img className="mapLogo" src="/logo2.png" alt=""/>
+    </div>
       <div className="infoDiv">
         <div className="workLine">
           <div className="rightline"></div>

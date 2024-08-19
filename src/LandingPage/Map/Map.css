@@ -8,6 +8,30 @@
     padding: 20px; /* Optional padding */
     
   }
+  .orlando {
+    position: absolute;
+    top: 27%;
+    left: 11%;
+    width: 80px;
+    height: 80px;
+    background-color: black;  /* Background color for the pin */
+    border-radius: 50% 50% 50% 0;  /* Map pin shape */
+    transform: rotate(-45deg);  /* Rotate to point downwards */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  /* Add shadow for effect */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapLogo {
+    width: 50px;
+    height: 50px;
+    border-color: 1px solid black;
+    object-fit: cover;  /* Ensures the image covers the entire div without distortion */
+    transform: rotate(45deg);  /* Corrects the rotation for the image */
+}
+
   .infoDiv{
     position: absolute;
     top: 50%; /* Move it 50% down from the top */
