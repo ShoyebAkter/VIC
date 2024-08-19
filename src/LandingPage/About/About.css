@@ -3,7 +3,8 @@
     background-size: cover;
     background-position: center;
     height: 100vh; /* Adjust the height as needed */
-    color: white;
+    color: white; /* Ensure text is visible */
+    padding: 20px; /* Optional padding */
     position: relative;
   }
   .description{
