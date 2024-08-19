@@ -4,14 +4,16 @@
   background-position: center;
   position: relative;
   height: 100vh; /* Adjust the height as needed */
-  color: white;/* Optional padding */
+  color: white; /* Ensure text is visible */
+  padding: 20px; /* Optional padding */
   margin-bottom: 30px;
 }
   
   .navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
   .headerLogo{
     width: 50px;
