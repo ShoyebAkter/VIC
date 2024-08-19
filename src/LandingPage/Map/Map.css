@@ -1,5 +1,5 @@
 .mapContainer {
-    background-image: url('BG3.jpg'); /* Replace with your image path */
+    background-image: url('/BG3.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     position: relative;

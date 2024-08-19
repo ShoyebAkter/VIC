@@ -1,5 +1,5 @@
 .about-container {
-    background-image: url('BG2.jpg'); /* Replace with your image path */
+    background-image: url('/BG2.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     height: 100vh; /* Adjust the height as needed */
