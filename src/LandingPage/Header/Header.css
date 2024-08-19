@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    padding-inline: 20px;
   }
   .headerLogo{
     width: 50px;
@@ -25,7 +25,7 @@
   
   
   .nav-item.button {
-    background-color: yellow;
+    background-color: #F4DC13;
     padding-inline: 5px;
     border-radius: 5px;
     color: black;
@@ -50,7 +50,7 @@
     left: 45%;
   }
   .bookButton{
-    background-color: yellow;
+    background-color: #F4DC13;
     color: black;
     margin-inline: auto;
     border-radius: 5px;
@@ -74,8 +74,8 @@
   }
   .language-dropdown {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 50px;
+    left:10%;
     font-size: 20px;
     z-index: 100; /* Ensures the dropdown stays above other elements */
   }

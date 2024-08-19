@@ -14,7 +14,7 @@
     text-align: center;
     color: yellow;
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 100;
 }
 .priceDescription {
@@ -64,7 +64,7 @@ from, to {
   }
   
   .centeryellowline {
-    width: 40px;
+    width: 70px;
     height: 15px;
     background-color: yellow;
     margin: 5px 0;

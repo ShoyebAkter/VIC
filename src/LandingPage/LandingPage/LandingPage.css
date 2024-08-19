@@ -2,7 +2,6 @@
 .landingPage{
    background-color: black;
    font-family: 'Museo Sans Rounded', sans-serif;
-   width: 100vw;
-   font-size: 32px;
+   font-size: 24px;
    overflow: hidden;
 }
