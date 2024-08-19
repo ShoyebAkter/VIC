@@ -4,8 +4,7 @@
   background-position: center;
   position: relative;
   height: 100vh; /* Adjust the height as needed */
-  color: white; /* Ensure text is visible */
-  padding: 20px; /* Optional padding */
+  color: white;/* Optional padding */
   margin-bottom: 30px;
 }
   
@@ -13,7 +12,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
     width: 100%;
   }
   .headerLogo{
