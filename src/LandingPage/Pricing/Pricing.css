@@ -17,10 +17,33 @@
     font-size: 24px;
     font-weight: 100;
 }
-.priceDescription{
-    text-align: center;
-    margin-inline: 40px;
+.priceDescription {
+  text-align: center;
+  margin-inline: 40px;
+  overflow: hidden;  /* Ensure no text appears outside the container */
+  white-space: normal;  /* Allow the text to wrap and break lines */
+  animation: typing 5s steps(100, end), blink-caret 0.75s step-end infinite;  /* Adjust animation duration and steps */
+  max-width: 100%;  /* Adjusts to the container width */
 }
+
+@keyframes typing {
+from {
+    max-width: 0;  /* Start with no visible text */
+}
+to {
+    max-width: 100%;  /* Reveal the full width, allowing text to wrap */
+}
+}
+
+@keyframes blink-caret {
+from, to {
+    border-color: transparent;
+}
+50% {
+    border-color: rgba(180, 179, 176, 0.75);
+}
+}
+
 .contactButton{
     margin-top: 20px;
     text-align: center;
