@@ -10,7 +10,7 @@
   }
   .orlando {
     position: absolute;
-    top: 27%;
+    top: 45%;
     left: 11%;
     width: 80px;
     height: 80px;
@@ -25,7 +25,7 @@
 }
 
 .mapLogo {
-    width: 50px;
+    width: 35px;
     height: 50px;
     border-color: 1px solid black;
     object-fit: cover;  /* Ensures the image covers the entire div without distortion */
@@ -40,7 +40,7 @@
   }
  
   .workSection{
-    width: 300px;
+    width: 500px;
     margin-right: 20px;
     padding: 10px; 
     
@@ -73,7 +73,7 @@
   }
   .rightline{
     width: 15px;
-    height: 30px;
+    height: 50px;
     background-color: yellow;
     margin: 5px 0;
   }

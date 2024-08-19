@@ -8,7 +8,7 @@
     position: relative;
   }
   .description{
-    width: 300px;
+    width: 500px;
     background-color: black;
     padding: 10px;
   }
@@ -30,7 +30,7 @@
   
   .aboutLeftline {
     width: 15px;
-    height: 30px;
+    height: 50px;
     background-color: yellow;
     margin: 5px 0;
   }
@@ -43,7 +43,7 @@
   }
   .aboutrightline{
     width: 15px;
-    height: 60px;
+    height: 90px;
     background-color: yellow;
     margin: 5px 0;
     animation: pulsate 1s infinite, moveUp 2s infinite ease-in-out;
