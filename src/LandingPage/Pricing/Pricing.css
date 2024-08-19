@@ -50,7 +50,7 @@ from, to {
     font-weight: 700;
     cursor: pointer;
     margin-inline: auto;
-    background-color: yellow;
+    background-color: #F4DC13;
     color: black;
     width: 200px;
     border-radius: 5px;
@@ -78,13 +78,13 @@ from, to {
   }
   .toprightline1{
     width: 15px;
-    height: 60px;
+    height: 90px;
     background-color: yellow;
     margin: 5px 0;
   }
   .toprightline2{
     width: 10px;
-    height: 60px;
+    height: 90px;
     background-color: yellow;
     margin: 5px 0;
   }
