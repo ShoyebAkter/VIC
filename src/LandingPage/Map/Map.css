@@ -10,10 +10,10 @@
   }
   .orlando {
     position: absolute;
-    top: 45%;
-    left: 11%;
-    width: 80px;
-    height: 80px;
+    top: 41%;
+    left: 10%;
+    width: 120px;
+    height: 120px;
     background-color: black;  /* Background color for the pin */
     border-radius: 50% 50% 50% 0;  /* Map pin shape */
     transform: rotate(-45deg);  /* Rotate to point downwards */
@@ -25,8 +25,8 @@
 }
 
 .mapLogo {
-    width: 35px;
-    height: 50px;
+    width: 55px;
+    height: 70px;
     border-color: 1px solid black;
     object-fit: cover;  /* Ensures the image covers the entire div without distortion */
     transform: rotate(45deg);  /* Corrects the rotation for the image */
@@ -41,12 +41,12 @@
  
   .workSection{
     width: 600px;
-    margin-right: 20px;
+    margin-right: 40px;
     padding: 20px; 
     
   }
   .workPlace{
-    color: yellow;
+    color: #f5db0e;
     text-align: right;
   }
   .workDescription{
@@ -72,8 +72,8 @@
     right: 0px;
   }
   .rightline{
-    width: 15px;
+    width: 35px;
     height: 70px;
-    background-color: yellow;
+    background-color: #f5db0e;
     margin: 5px 0;
   }

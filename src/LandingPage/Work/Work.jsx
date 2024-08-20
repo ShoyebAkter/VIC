@@ -4,7 +4,7 @@ const Work = ({language}) => {
   return (
     <div className='workContainer'>
       <div className="leftLine">
-        <div className="yellowline"></div>
+        <div className="#f5db0eline"></div>
       </div>
       <div className="newdescription">
         <div className="howToDo">How we do it</div>

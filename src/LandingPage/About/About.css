@@ -11,9 +11,10 @@
     width: 600px;
     background-color: black;
     padding: 20px;
+    margin-left: 30px;
   }
   .aboutme{
-    color: yellow;
+    color: #f5db0e;
     text-align: left;
   }
   .mydescription{
@@ -29,9 +30,9 @@
   }
   
   .aboutLeftline {
-    width: 15px;
+    width: 35px;
     height: 70px;
-    background-color: yellow;
+    background-color: #f5db0e;
     margin: 5px 0;
   }
   .aboutTopLine{
@@ -44,9 +45,8 @@
   .aboutrightline{
     width: 15px;
     height: 90px;
-    background-color: yellow;
+    background-color: #f5db0e;
     margin: 5px 0;
-    animation: pulsate 1s infinite, moveUp 2s infinite ease-in-out;
   }
   
   @keyframes pulsate {

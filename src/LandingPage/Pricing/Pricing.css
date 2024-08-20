@@ -12,10 +12,11 @@
 }
 .priceTag{
     text-align: center;
-    color: yellow;
+    color: #f5db0e;
     margin-bottom: 10px;
     font-size: 40px;
     font-weight: 100;
+    margin-top: 20px;
 }
 .priceDescription {
   text-align: center;
@@ -63,10 +64,10 @@ from, to {
     transform: translateX(-50%);
   }
   
-  .centeryellowline {
+  .center#f5db0eline {
     width: 70px;
-    height: 15px;
-    background-color: yellow;
+    height: 35px;
+    background-color: #f5db0e;
     margin: 5px 0;
   }
 .topLine{
@@ -79,12 +80,12 @@ from, to {
   .toprightline1{
     width: 15px;
     height: 90px;
-    background-color: yellow;
+    background-color: #f5db0e;
     margin: 5px 0;
   }
   .toprightline2{
     width: 10px;
     height: 90px;
-    background-color: yellow;
+    background-color: #f5db0e;
     margin: 5px 0;
   }

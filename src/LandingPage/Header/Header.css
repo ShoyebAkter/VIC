@@ -8,18 +8,22 @@
   padding: 20px; /* Optional padding */
   margin-bottom: 30px;
 }
+.header{
+  display: flex;
+  justify-content: space-evenly;
+}
   
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-inline: 20px;
+    gap: 100px;
   }
   .headerLogo{
-    width: 50px;
+    width: 80px;
   }
   .nav-item {
-    color: yellow;
+    color: #f5db0e;
     font-weight: 300;
   }
   
@@ -36,7 +40,7 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: yellow;
+    color: #f5db0e;
     font-size: 36px;
     text-align: center;
     margin-top: 30px;
@@ -68,9 +72,8 @@
   .line {
     width: 15px;
     height: 90px;
-    background-color: yellow;
+    background-color: #f5db0e;
     margin: 5px 0;
-    animation: pulsate 1s infinite, moveUp 2s infinite ease-in-out;
   }
   .language-dropdown {
     position: absolute;
@@ -101,9 +104,9 @@
   .arrow-down {
     width: 0;
     height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 15px solid yellow; /* Arrow color */
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 25px solid #f5db0e; /* Arrow color */
     margin: 5px;
     margin-inline: auto;
     animation: pulsate 1s infinite;

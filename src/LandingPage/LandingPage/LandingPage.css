@@ -1,7 +1,7 @@
-@import url('https://fonts.cdnfonts.com/css/museo-sans-rounded');
+@import url('https://www.fontsaddict.com/fontface/museosans-500.otf');
 .landingPage{
    background-color: black;
-   font-family: 'Museo Sans Rounded', sans-serif;
+   font-family: 'MuseoSans-500', sans-serif;
    font-size: 32px;
    overflow: hidden;
 }

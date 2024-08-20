@@ -4,7 +4,7 @@ const Pricing = ({language}) => {
   return (
     <div className="pricingContainer">
       <div className="centerLine">
-        <div className="centeryellowline"></div>
+        <div className="center#f5db0eline"></div>
       </div>
       <div className="topLine">
         <div className="toprightline1"></div>

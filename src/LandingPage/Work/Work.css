@@ -11,9 +11,10 @@
 .newdescription{
     width: 500px;
     padding: 10px;
+    margin-left: 30px;
   }
   .howToDo{
-    color: yellow;
+    color: #f5db0e;
     text-align: left;
   }
   .myWorkdescription{
@@ -26,10 +27,10 @@
     left: 0px;
   }
   
-  .yellowline {
-    width: 15px;
+  .#f5db0eline {
+    width: 35px;
     height: 50px;
-    background-color: yellow;
+    background-color: #f5db0e;
     margin: 5px 0;
   }
   .bottomLine{
@@ -42,12 +43,12 @@
   .rightline1{
     width: 15px;
     height: 90px;
-    background-color: yellow;
+    background-color: #f5db0e;
     margin: 5px 0;
   }
   .rightline2{
     width: 10px;
     height: 90px;
-    background-color: yellow;
+    background-color: #f5db0e;
     margin: 5px 0;
   }
