@@ -1,7 +1,7 @@
 import "./About.css";
 const About = ({language}) => {
   return (
-    <div className="about-container">
+    <div id="about" className="about-container">
     <div className="aboutTopLine">
         <div className="aboutrightline"></div>
         <div className="aboutrightline"></div>

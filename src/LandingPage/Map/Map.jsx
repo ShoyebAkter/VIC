@@ -1,7 +1,7 @@
 import "./Map.css";
 const Map = ({language}) => {
   return (
-    <div className="mapContainer">
+    <div id="work" className="mapContainer">
     <div className="orlando">
     <img className="mapLogo" src="/logo2.png" alt=""/>
     </div>

@@ -11,11 +11,11 @@ const Header = ({ setLanguage }) => {
           <img className="headerLogo" src="/logo2.png" alt="" />
         </div>
         <div className="navbar">
-          <div className="nav-item highlight">About VIC</div>
-          <div className="nav-item">Where We Work</div>
-          <div className="nav-item highlight">Services</div>
-          <div className="nav-item highlight">Pricing</div>
-          <div className="nav-item button">Book A Consultation</div>
+          <a href="#about" className="nav-item highlight">About VIC</a>
+          <a href="#work" className="nav-item">Where We Work</a>
+          <a href="#service" className="nav-item highlight">Services</a>
+          <a href="#pricing" className="nav-item highlight">Pricing</a>
+          <div  className="nav-item button">Book A Consultation</div>
         </div>
       </nav>
       <div className="centered-title">

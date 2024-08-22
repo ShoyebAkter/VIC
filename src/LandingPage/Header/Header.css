@@ -25,6 +25,7 @@
   .nav-item {
     color: #f5db0e;
     font-weight: 300;
+    cursor: pointer;
   }
   
   

@@ -22,8 +22,7 @@
   text-align: center;
   margin-inline: 40px;
   overflow: hidden;  /* Ensure no text appears outside the container */
-  white-space: normal;  /* Allow the text to wrap and break lines */
-  animation: typing 5s steps(100, end), blink-caret 0.75s step-end infinite;  /* Adjust animation duration and steps */
+  white-space: normal;  /* Allow the text to wrap and break lines */  /* Adjust animation duration and steps */
   max-width: 100%;  /* Adjusts to the container width */
 }
 
@@ -64,7 +63,7 @@ from, to {
     transform: translateX(-50%);
   }
   
-  .center#f5db0eline {
+  .centeryellowline {
     width: 70px;
     height: 35px;
     background-color: #f5db0e;

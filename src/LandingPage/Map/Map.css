@@ -18,12 +18,21 @@
     border-radius: 50% 50% 50% 0;  /* Map pin shape */
     transform: rotate(-45deg);  /* Rotate to point downwards */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  /* Add shadow for effect */
-
+    /* animation: pulsate 1s infinite; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+@keyframes pulsate {
+    0%, 100% {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scaleY(1.5);
+      opacity: 0.7;
+    }
+  }
 .mapLogo {
     width: 55px;
     height: 70px;

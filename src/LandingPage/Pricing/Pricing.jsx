@@ -2,9 +2,9 @@ import "./Pricing.css";
 
 const Pricing = ({language}) => {
   return (
-    <div className="pricingContainer">
+    <div id="pricing" className="pricingContainer">
       <div className="centerLine">
-        <div className="center#f5db0eline"></div>
+        <div className="centeryellowline"></div>
       </div>
       <div className="topLine">
         <div className="toprightline1"></div>

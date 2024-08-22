@@ -2,9 +2,9 @@ import './Work.css'
 
 const Work = ({language}) => {
   return (
-    <div className='workContainer'>
+    <div id='service' className='workContainer'>
       <div className="leftLine">
-        <div className="#f5db0eline"></div>
+        <div className="yellowline"></div>
       </div>
       <div className="newdescription">
         <div className="howToDo">How we do it</div>
