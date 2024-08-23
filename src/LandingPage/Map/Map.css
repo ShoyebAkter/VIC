@@ -76,7 +76,7 @@
   }
   .workDescription{
     text-align: right;
-    color: rgb(180, 179, 176);
+    color: white;
     animation: fadeInSlideUp 5s ease-out both;
   }
 

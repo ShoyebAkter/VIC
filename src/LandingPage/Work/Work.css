@@ -19,7 +19,7 @@
   }
   .myWorkdescription{
     text-align: left;
-    color: rgb(180, 179, 176);
+    color: white;
   }
   .leftLine {
     position: absolute;
@@ -51,4 +51,10 @@
     height: 90px;
     background-color: yellow;
     margin: 5px 0;
+  }
+
+  @media (max-width: 768px) {
+    .myWorkdescription{
+      font-size: 20px;
+    }
   }

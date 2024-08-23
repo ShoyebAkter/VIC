@@ -19,7 +19,7 @@
   }
   .mydescription{
     text-align: left;
-    color: rgb(180, 179, 176);
+    color: white;
   }
 
     
@@ -72,7 +72,7 @@
 
 @media (max-width: 1200px) {
   .description {
-    width: 400px; /* Adjust description width */
+    width: 450px; /* Adjust description width */
     padding: 15px; /* Reduce padding for medium screens */
   }
 
@@ -81,7 +81,7 @@
   }
 
   .mydescription {
-    font-size: 1em; /* Slightly smaller font */
+    font-size: 24px; /* Slightly smaller font */
   }
 
   .aboutLeftline {
@@ -107,7 +107,7 @@
   }
 
   .mydescription {
-    font-size: 0.9em; /* Smaller font size */
+    font-size: 20px; /* Smaller font size */
   }
 
 
