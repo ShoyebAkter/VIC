@@ -134,7 +134,11 @@
       transform: translateY(-20px);
     }
   }
-
+  @media (max-width: 1420px) {
+    .navbar{
+      gap: 45px;
+    }
+  }
   @media (max-width: 1200px) {
     .navbar{
       font-size: 20px;
