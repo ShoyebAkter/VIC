@@ -58,3 +58,9 @@
       font-size: 20px;
     }
   }
+
+  @media (max-width: 1200px) {
+    .myWorkdescription{
+      font-size: 24px;
+    }
+  }
