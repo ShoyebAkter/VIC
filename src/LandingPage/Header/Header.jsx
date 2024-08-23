@@ -4,6 +4,11 @@ const Header = ({ setLanguage }) => {
   const handleLanguageChange = (event) => {
     setLanguage(event.target.value);
   };
+
+  function toggleMenu() {
+    const navbar = document.querySelector('.navbar');
+    navbar.style.display = navbar.style.display === 'flex' ? 'none' : 'flex';
+  }
   return (
     <div className="header-container">
       <nav className="header">
@@ -17,6 +22,7 @@ const Header = ({ setLanguage }) => {
           <a href="#pricing" className="nav-item highlight">Pricing</a>
           <div  className="nav-item button">Book A Consultation</div>
         </div>
+        <div className="hamburger-menu" onClick={toggleMenu}>☰</div>
       </nav>
       <div className="centered-title">
         <img className="vic" src="/logo1.png" alt="" />

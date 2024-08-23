@@ -102,3 +102,13 @@
     background-color: #f5db0e;
     margin: 5px 0;
   }
+
+
+  @media (max-width: 768px) {
+    .workDescription{
+      font-size: 20px;
+    }
+    .workSection{
+      width: 300px;
+    }
+  }

@@ -68,3 +68,50 @@
       transform: translateY(-20px);
     }
   }
+
+
+@media (max-width: 1200px) {
+  .description {
+    width: 400px; /* Adjust description width */
+    padding: 15px; /* Reduce padding for medium screens */
+  }
+
+  .aboutme {
+    font-size: 1.8em; /* Slightly smaller font */
+  }
+
+  .mydescription {
+    font-size: 1em; /* Slightly smaller font */
+  }
+
+  .aboutLeftline {
+    width: 25px;
+    height: 60px; /* Reduce size of the left line */
+  }
+
+  .aboutrightline {
+    width: 15px;
+    height: 90px; /* Reduce size of the right lines */
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .description {
+    width: 500px; /* Further reduce width */
+    padding: 10px; /* Further reduce padding */
+  }
+
+  .aboutme {
+    font-size: 1.5em; /* Smaller font size */
+  }
+
+  .mydescription {
+    font-size: 0.9em; /* Smaller font size */
+  }
+
+
+  .about-container {
+    text-align: center; /* Center align text */
+  }
+}

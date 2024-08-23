@@ -88,3 +88,10 @@ from, to {
     background-color: #f5db0e;
     margin: 5px 0;
   }
+
+  @media (max-width: 768px) {
+    .priceDescription{
+      font-size: 28px;
+      margin-inline: 5px;
+    }
+  }

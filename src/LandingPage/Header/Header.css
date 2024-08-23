@@ -69,7 +69,9 @@
     display: flex;
     gap: 10px;
   }
-  
+  .hamburger-menu{
+    display: none;
+  }
   .line {
     width: 15px;
     height: 90px;
@@ -132,3 +134,47 @@
       transform: translateY(-20px);
     }
   }
+
+  @media (max-width: 1200px) {
+    .navbar{
+      font-size: 20px;
+      gap: 50px;
+    }
+  }
+  @media (max-width: 880px) {
+    .navbar{
+      font-size: 14px;
+      gap: 50px;
+    }
+  }
+@media (max-width: 768px) {
+  .header{
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar {
+    display: none; /* Hide the navbar on small screens */
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 400px;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .hamburger-menu {
+    display: block; /* Show the hamburger menu */
+  }
+
+  .bookButtonArea {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+  .vic {
+    width: 90%; /* Make logo responsive */
+  }
+}
