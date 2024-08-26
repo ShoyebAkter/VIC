@@ -16,10 +16,13 @@
   .howToDo{
     color: yellow;
     text-align: left;
+    font-family: 'DenseBold, sans-serif';
+    font-size: 49px;
   }
   .myWorkdescription{
     text-align: left;
     color: white;
+    font-size: 15px;
   }
   .leftLine {
     position: absolute;

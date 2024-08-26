@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       
     <footer>
-        <p>Copyright &copy; 2024 All Rights Reserved VIC.</p>
+        <p>Copyright &copy; 2024 All Rights Angularis Agency -Angularis Agency</p>
     </footer>
     </div>
   )

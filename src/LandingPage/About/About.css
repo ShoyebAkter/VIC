@@ -16,10 +16,13 @@
   .aboutme{
     color: #f5db0e;
     text-align: left;
+    font-size: 49px;
+    font-family: 'DenseBold, sans-serif';
   }
   .mydescription{
     text-align: left;
     color: white;
+    font-size: 15px;
   }
 
     
@@ -78,6 +81,7 @@
 
   .aboutme {
     font-size: 1.8em; /* Slightly smaller font */
+    
   }
 
   .mydescription {

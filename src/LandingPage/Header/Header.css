@@ -10,7 +10,9 @@
 }
 .header{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20px;
+  font-family: 'DenseBold, sans-serif';
 }
   
   .navbar {
@@ -34,6 +36,7 @@
     padding-inline: 5px;
     border-radius: 5px;
     color: black;
+    padding-inline: 30px;
   }
   
   .centered-title {
@@ -61,6 +64,7 @@
     border-radius: 5px;
     padding-inline: 10px;
     font-weight: 700;
+    cursor: pointer;
   }
   .bottom-lines {
     position: absolute;

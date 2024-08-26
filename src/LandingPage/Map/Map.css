@@ -73,23 +73,14 @@
   .workPlace{
     color: #f5db0e;
     text-align: right;
+    font-family: 'DenseBold, sans-serif';
+    font-size: 49px;
   }
   .workDescription{
     text-align: right;
     color: white;
-    animation: fadeInSlideUp 5s ease-out both;
+    font-size: 15px;
   }
-
-  @keyframes fadeInSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);  /* Start slightly below */
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);  /* End in original position */
-    }
-}
 
   .workLine{
     position: absolute;

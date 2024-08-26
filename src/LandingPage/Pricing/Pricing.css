@@ -14,34 +14,14 @@
     text-align: center;
     color: #f5db0e;
     margin-bottom: 10px;
-    font-size: 40px;
-    font-weight: 100;
     margin-top: 20px;
+    font-family: 'DenseBold, sans-serif';
+    font-size: 49px;
 }
 .priceDescription {
   text-align: center;
-  margin-inline: 40px;
-  overflow: hidden;  /* Ensure no text appears outside the container */
-  white-space: normal;  /* Allow the text to wrap and break lines */  /* Adjust animation duration and steps */
-  max-width: 100%;  /* Adjusts to the container width */
-}
-
-@keyframes typing {
-from {
-    max-width: 0;  /* Start with no visible text */
-}
-to {
-    max-width: 100%;  /* Reveal the full width, allowing text to wrap */
-}
-}
-
-@keyframes blink-caret {
-from, to {
-    border-color: transparent;
-}
-50% {
-    border-color: rgba(180, 179, 176, 0.75);
-}
+  font-size: 15px;
+  
 }
 
 .contactButton{
