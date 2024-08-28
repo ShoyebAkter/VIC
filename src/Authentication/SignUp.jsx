@@ -1,18 +1,45 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {  createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase.init";
 const SignUp = () => {
-    const navigate=useNavigate()
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const navigate = useNavigate();
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePassChange = (event) => {
+    setPass(event.target.value);
+  };
+
+  const handleSubmit=async(e)=>{
+    e.preventDefault();
+   await createUserWithEmailAndPassword(auth, email, pass)
+   .then((userCredential) => {
+     // Signed up 
+     const user = userCredential.user;
+     if(user){
+      navigate('/login')
+     }
+     // ...
+   })
+   .catch((error) => {
+     const errorCode = error.code;
+     const errorMessage = error.message;
+     // ..
+   });
+  }
+
   return (
     <div>
-        <section class="border-red-500 bg-gray-200  min-h-screen flex items-center justify-center loginSection">
+      <section class="border-red-500 bg-gray-200  min-h-screen flex items-center justify-center loginSection">
         <div class="bg-gray-100 p-5 flex rounded-2xl shadow-lg max-w-3xl">
           <div class="md:w-1/2 px-5">
             <h2 class="text-2xl font-bold text-[#002D74]">Register</h2>
-            <p class="text-sm mt-4 text-[#002D74]">
-              Create your acoount
-            </p>
-            <form class="mt-6" action="#" method="POST">
+            <p class="text-sm mt-4 text-[#002D74]">Create your acoount</p>
+            <form class="mt-6" action="#" method="POST" onSubmit={handleSubmit}>
               <div>
                 <label class="block text-gray-700">Name</label>
                 <input
@@ -37,6 +64,8 @@ const SignUp = () => {
                   autofocus
                   autocomplete
                   required
+                  value={email}
+                  onChange={handleEmailChange}
                 />
               </div>
 
@@ -51,9 +80,9 @@ const SignUp = () => {
                   class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
                   focus:bg-white focus:outline-none"
                   required
+                  onChange={handlePassChange}
                 />
               </div>
-
 
               <button
                 type="submit"
@@ -70,28 +99,24 @@ const SignUp = () => {
               <hr class="border-gray-500" />
             </div>
 
-
             <div class="text-sm flex justify-between items-center mt-3">
               <p>If you have an account...</p>
               <button
-              onClick={()=>navigate('/login')}
-               class="py-2 px-5 ml-3 bg-white border rounded-xl hover:scale-110 duration-300 border-blue-400  ">
+                onClick={() => navigate("/login")}
+                class="py-2 px-5 ml-3 bg-white border rounded-xl hover:scale-110 duration-300 border-blue-400  "
+              >
                 Login
               </button>
             </div>
           </div>
 
           <div class="w-1/2 md:block hidden ">
-            <img
-              src="/login.avif"
-              class="rounded-2xl"
-              alt="page img"
-            />
+            <img src="/login.avif" class="rounded-2xl" alt="page img" />
           </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;

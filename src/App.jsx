@@ -5,16 +5,21 @@ import LandingPage from './LandingPage/LandingPage/LandingPage'
 import { Route, Routes } from 'react-router-dom'
 import Login from './Authentication/Login'
 import SignUp from './Authentication/SignUp'
+import Dashboard from './Dashboard/Dashboard'
+import ProtectedRoute from './Authentication/ProtectedRoute'
+import { AuthProvider } from './Authentication/Authcontext'
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
+    <AuthProvider>
     <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<SignUp />} />
+        <Route exact path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />}/>
     </Routes>
+    </AuthProvider>
     </>
   )
 }

@@ -1,8 +1,38 @@
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import { useState } from 'react';
+import { auth } from '../firebase.init';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
-    const navigate=useNavigate()
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const navigate = useNavigate();
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePassChange = (event) => {
+    setPass(event.target.value);
+  };
+
+  const handleSubmit=async(e)=>{
+    e.preventDefault();
+   await signInWithEmailAndPassword(auth, email, pass)
+   .then((userCredential) => {
+     // Signed up 
+     const user = userCredential.user;
+     if(user){
+      navigate('/dashboard')
+     }
+     // ...
+   })
+   .catch((error) => {
+     const errorCode = error.code;
+     const errorMessage = error.message;
+     // ..
+   });
+  }
   return (
     <div className="">
       <section class="border-red-500 bg-gray-200  min-h-screen flex items-center justify-center loginSection">
@@ -12,7 +42,7 @@ const Login = () => {
             <p class="text-sm mt-4 text-[#002D74]">
               If you have an account, please login
             </p>
-            <form class="mt-6" action="#" method="POST">
+            <form class="mt-6" action="#" method="POST" onSubmit={handleSubmit}>
               <div>
                 <label class="block text-gray-700">Email Address</label>
                 <input
@@ -24,6 +54,8 @@ const Login = () => {
                   autofocus
                   autocomplete
                   required
+                  value={email}
+                  onChange={handleEmailChange}
                 />
               </div>
 
@@ -38,6 +70,7 @@ const Login = () => {
                   class="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
                   focus:bg-white focus:outline-none"
                   required
+                  onChange={handlePassChange}
                 />
               </div>
 
