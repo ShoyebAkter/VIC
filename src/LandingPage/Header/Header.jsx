@@ -38,7 +38,7 @@ const Header = ({ setLanguage }) => {
             className="nav-item button"
             onClick={() => document.getElementById("my_modal_2").showModal()}
           >
-            BOOK A CONSULTATION
+            BOOK A CONSULTAION
           </div>
           <div className="nav-item button" onClick={()=>navigate('/login')}>Login</div>
         </div>

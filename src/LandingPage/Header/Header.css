@@ -15,7 +15,7 @@
   font-family: 'DenseBold, sans-serif';
 }
   .modalArea{
-    background-color: #F4DC13 !important;
+    background-color: rgba(169, 169, 169, 0.8)    !important;
   }
   .navbar {
     display: flex;
