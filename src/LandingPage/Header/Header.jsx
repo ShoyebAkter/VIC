@@ -3,8 +3,10 @@ import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "./Header.css";
+import { useNavigate } from "react-router-dom";
 const Header = ({ setLanguage }) => {
   const [startDate, setStartDate] = useState(new Date());
+  const navigate = useNavigate();
   const handleLanguageChange = (event) => {
     setLanguage(event.target.value);
   };
@@ -36,9 +38,9 @@ const Header = ({ setLanguage }) => {
             className="nav-item button"
             onClick={() => document.getElementById("my_modal_2").showModal()}
           >
-            Book A Consultation
+            BOOK A CONSULTATION
           </div>
-          <div className="nav-item button">Login</div>
+          <div className="nav-item button" onClick={()=>navigate('/login')}>Login</div>
         </div>
         <div className="hamburger-menu" onClick={toggleMenu}>
           ☰
