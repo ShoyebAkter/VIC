@@ -14,12 +14,14 @@
   gap: 20px;
   font-family: 'DenseBold, sans-serif';
 }
-  
+  .modalArea{
+    background-color: #F4DC13 !important;
+  }
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 100px;
+    gap: 50px;
   }
   .headerLogo{
     width: 80px;
@@ -57,6 +59,7 @@
     bottom: 20%;
     left: 45%;
   }
+  
   .bookButton{
     background-color: #F4DC13;
     color: black;

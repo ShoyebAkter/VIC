@@ -9,5 +9,7 @@ export default defineConfig({
       plugins: [tailwindcss()],
     },
   },
-
+  optimizeDeps: {
+    include: ['react-datepicker'],
+  }
 });
