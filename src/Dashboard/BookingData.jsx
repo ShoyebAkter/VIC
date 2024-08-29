@@ -15,7 +15,7 @@ const BookingData = () => {
      <div class="">
   <div class="">
     <div>
-      <h2 class="text-2xl font-semibold leading-tight">Booking Information</h2>
+      <h2 class="text-2xl font-semibold leading-tight text-center my-5">Booking Information</h2>
     </div>
     <div class=" ">
       <div
@@ -37,7 +37,10 @@ const BookingData = () => {
             Date
           </th>
           <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-          Time(hour)
+          Car Model
+          </th>
+          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+          Car Service
           </th>
           
         </tr>
@@ -74,7 +77,10 @@ const BookingData = () => {
               </span>
             </td>
             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
-            {invoice.time}
+            {invoice.car}
+            </td>
+            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+            {invoice.service}
             </td>
           </tr>
         ))}

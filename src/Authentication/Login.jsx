@@ -92,21 +92,6 @@ const Login = () => {
               </button>
             </form>
 
-            <div class="mt-7 grid grid-cols-3 items-center text-gray-500">
-              <hr class="border-gray-500" />
-              <p class="text-center text-sm">OR</p>
-              <hr class="border-gray-500" />
-            </div>
-
-
-            <div class="text-sm flex justify-between items-center mt-3">
-              <p>If you don't have an account...</p>
-              <button
-              onClick={()=>navigate('/signup')}
-               class="py-2 px-5 ml-3 bg-white border rounded-xl hover:scale-110 duration-300 border-blue-400  ">
-                Register
-              </button>
-            </div>
           </div>
 
           <div class="w-1/2 md:block hidden ">

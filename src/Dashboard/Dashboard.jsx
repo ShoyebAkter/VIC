@@ -7,7 +7,7 @@ const Dashboard = () => {
   const navigate=useNavigate();
   const signOutData=()=>{
     signOut(auth).then(() => {
-      navigate('/login');
+      navigate('/');
     }).catch((error) => {
       console.log(error)
     });
@@ -15,7 +15,7 @@ const Dashboard = () => {
   return (
     <div className=''>
       <nav >
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mx-10">
           <img className="headerLogo" src="/logo2.png" alt="" />
           <div className="p-3 bg-yellow-300 rounded-2xl font-semibold cursor-pointer" onClick={signOutData}>Logout</div>
         </div>

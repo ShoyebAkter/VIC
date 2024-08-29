@@ -92,13 +92,16 @@
     font-size: 20px;
     z-index: 100; /* Ensures the dropdown stays above other elements */
   }
-  
+  .react-datepicker-wrapper{
+    width: 100%;
+  }
   .language-dropdown select {
     margin-left: 15px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 2px;
     font-size: 20px;
+    padding: 5px;
     cursor: pointer;
     border-color: white;
   }
