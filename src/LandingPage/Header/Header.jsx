@@ -49,7 +49,7 @@ const Header = ({ setLanguage }) => {
       service: service,
     };
     console.log(bookingInfo);
-    fetch("http://localhost:3000/bookingData", {
+    fetch("https://vic-server.vercel.app/bookingData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
