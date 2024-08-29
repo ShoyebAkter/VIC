@@ -3,6 +3,7 @@
    background-color: black;
    font-family: 'MuseoSans-500', sans-serif;
    font-size: 32px;
-   overflow: hidden;
+   width: 100vw;
 }
 /* dense font */
+

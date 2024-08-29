@@ -1,5 +1,4 @@
 .pricingContainer{
-   
     background-image: url('/BG5.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
@@ -20,7 +19,7 @@
 }
 .priceDescription {
   text-align: center;
-  
+  font-size: 15px;
 }
 
 .contactButton{
