@@ -6,10 +6,57 @@ import "./Header.css";
 import { useNavigate } from "react-router-dom";
 const Header = ({ setLanguage }) => {
   const [startDate, setStartDate] = useState(new Date());
+  const [name,setName]=useState("");
+  const [email,setEmail]=useState("");
+  const [contact,setContact]=useState("");
+  const [time,setTime]=useState("");
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleContactChange = (event) => {
+    setContact(event.target.value);
+  };
+
+  const handleTimeChange = (event) => {
+    setTime(event.target.value);
+  };
+
   const navigate = useNavigate();
   const handleLanguageChange = (event) => {
     setLanguage(event.target.value);
   };
+  // console.log(name,email,contact,startDate,time)
+
+  const handleBookingData=()=>{
+    const bookingInfo={
+      name:name,
+      email:email,
+      contact:contact,
+      date: startDate,
+      time:time
+  }
+  fetch("http://localhost:3000/bookingData", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(bookingInfo),
+  })
+  .then(res=>res.json())
+  
+  setContact("");
+  setEmail("");
+  setName("");
+  setStartDate("");
+  setTime("")
+}
+  
 
   function toggleMenu() {
     const navbar = document.querySelector(".navbar");
@@ -91,6 +138,8 @@ const Header = ({ setLanguage }) => {
                 type="text"
                 id="name"
                 name="name"
+                value={name}
+                onChange={handleNameChange}
                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
@@ -104,6 +153,8 @@ const Header = ({ setLanguage }) => {
                 type="email"
                 id="email"
                 name="email"
+                value={email}
+                onChange={handleEmailChange}
                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
@@ -117,6 +168,8 @@ const Header = ({ setLanguage }) => {
                 type="number"
                 id="number"
                 name="number"
+                value={contact}
+                onChange={handleContactChange}
                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
@@ -142,12 +195,16 @@ const Header = ({ setLanguage }) => {
                 type="number"
                 id="time"
                 name="time"
+                value={time}
+                onChange={handleTimeChange}
                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
           </div>
           <div className="p-2 w-full">
-            <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            <button
+            onClick={handleBookingData}
+             className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
               Button
             </button>
           </div>
