@@ -1,6 +1,6 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
-
+import { ToastContainer, toast } from "react-toastify";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,8 @@ const Header = ({ setLanguage }) => {
   const [contact, setContact] = useState("");
   const [car, setCar] = useState("");
   const [service, setService] = useState("");
-
+  const [time, setTime] = useState("");
+// toasttttttttttt
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -32,6 +33,10 @@ const Header = ({ setLanguage }) => {
     setService(event.target.value);
     // console.log(car)
   };
+  const handleTime = (event) => {
+    setTime(event.target.value);
+    // console.log(car)
+  };
   // console.log(car)
   const navigate = useNavigate();
   const handleLanguageChange = (event) => {
@@ -47,15 +52,28 @@ const Header = ({ setLanguage }) => {
       date: startDate,
       car: car,
       service: service,
+      time:time
     };
     console.log(bookingInfo);
-    fetch("https://vic-server.vercel.app/bookingData", {
+    fetch("http://localhost:3000/sendBookingemail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(bookingInfo),
-    }).then((res) => res.json());
+    }).then((res) => 
+    {
+      if(res.status===200){
+        toast.success("Your Booking is successful");
+        fetch("http://localhost:3000/bookingData", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(bookingInfo),
+    }).then(res=>res.json())
+    }}
+    );
 
     setContact("");
     setEmail("");
@@ -215,6 +233,28 @@ const Header = ({ setLanguage }) => {
                 for="time"
                 className="leading-7 text-sm text-black font-semibold"
               >
+                Time
+              </label>
+              <select
+                id="time"
+                name="time"
+                value={time}
+                onChange={handleTime}
+                className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              >
+                <option value="">Select</option>
+                <option value="10AM - 6PM">10AM - 6PM</option>
+                <option value="12AM - 10PM">12AM - 10PM</option>
+                <option value="6PM - 6AM">6PM - 6AM</option>
+              </select>
+            </div>
+          </div>
+          <div className="p-2 w-full">
+            <div className="relative">
+              <label
+                for="time"
+                className="leading-7 text-sm text-black font-semibold"
+              >
                 Car Model
               </label>
               <select
@@ -224,6 +264,7 @@ const Header = ({ setLanguage }) => {
                 onChange={handleCarChange}
                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
+                <option value="">Select</option>
                 <option value="Toyota">Toyota</option>
                 <option value="Honda">Honda</option>
                 <option value="Mercedes">Mercedes</option>
@@ -247,6 +288,9 @@ const Header = ({ setLanguage }) => {
                 onChange={handleService}
                 className="w-full py-2 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
+                <option value="">
+                  Select
+                </option>
                 <option value="Air-Conditioning Service & Repair">
                   Air-Conditioning Service & Repair
                 </option>
@@ -273,6 +317,7 @@ const Header = ({ setLanguage }) => {
           </div>
         </div>
       </dialog>
+      <ToastContainer />
     </div>
   );
 };

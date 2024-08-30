@@ -24,7 +24,7 @@ const Pricing = ({ language }) => {
           </span>
         ) : (
           <span>
-            Our prices are competitive and transparent.<br/>
+            Our prices are competitive and transparent.
              We offer various packages and personalized services according
             to your needs.<br/>
              Contact us for a detailed and no-obligation quote

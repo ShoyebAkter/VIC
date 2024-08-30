@@ -96,7 +96,7 @@ const Login = () => {
 
           <div class="w-1/2 md:block hidden ">
             <img
-              src="/login.avif"
+              src="/login.jpg"
               class="rounded-2xl"
               alt="page img"
             />
