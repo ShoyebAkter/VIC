@@ -16,7 +16,7 @@ const Pricing = ({ language }) => {
         {language === "es" ? (
           <span>
             Nuestros precios son competitivos y transparentes.
-            <br />
+            
             Ofrecemos diferentes paquetes y servicios personalizados según tus
             necesidades.<br />
              Contáctanos para obtener una cotización detallada y sin

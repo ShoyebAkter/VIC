@@ -11,7 +11,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span>angularis.agency</span>
+            <span className="cursor-pointer"> angularis.agency</span>
           </a>
         </p>
       </footer>
