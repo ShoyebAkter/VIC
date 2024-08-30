@@ -4,7 +4,7 @@ import "./Booking.css";
 const BookingData = () => {
   const [data,setData]=useState([])
   useEffect(()=>{
-    fetch("http://localhost:3000/bookingData")
+    fetch("https://vic-server.vercel.app/bookingData")
       .then((res) => res.json())
       .then((result) => setData(result))
       .catch((error) => console.error(error));

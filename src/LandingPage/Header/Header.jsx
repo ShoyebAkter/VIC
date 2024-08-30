@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import "react-datepicker/dist/react-datepicker.css";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
@@ -55,7 +56,8 @@ const Header = ({ setLanguage }) => {
       time:time
     };
     console.log(bookingInfo);
-    fetch("http://localhost:3000/sendBookingemail", {
+    
+    fetch("https://vic-server.vercel.app/sendBookingemail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,7 +67,7 @@ const Header = ({ setLanguage }) => {
     {
       if(res.status===200){
         toast.success("Your Booking is successful");
-        fetch("http://localhost:3000/bookingData", {
+        fetch("https://vic-server.vercel.app/bookingData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -148,6 +150,7 @@ const Header = ({ setLanguage }) => {
         <div className="line"></div>
         <div className="line"></div>
       </div>
+      <ToastContainer />
       <dialog id="my_modal_2" className="modal">
         <div className="modal-box modalArea">
           <form method="dialog">
@@ -317,7 +320,7 @@ const Header = ({ setLanguage }) => {
           </div>
         </div>
       </dialog>
-      <ToastContainer />
+      
     </div>
   );
 };
