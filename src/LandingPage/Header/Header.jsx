@@ -13,6 +13,7 @@ const Header = ({ setLanguage }) => {
   const [car, setCar] = useState("");
   const [service, setService] = useState("");
   const [time, setTime] = useState("");
+  const [clicked,setClicked]=useState(false)
 // toasttttttttttt
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -46,6 +47,7 @@ const Header = ({ setLanguage }) => {
   // console.log(name,email,contact,startDate,time)
 
   const handleBookingData = () => {
+    setClicked(true)
     const bookingInfo = {
       name: name,
       email: email,
@@ -57,7 +59,8 @@ const Header = ({ setLanguage }) => {
     };
     console.log(bookingInfo);
     
-    fetch("https://vic-server.vercel.app/sendBookingemail", {
+    if(email && name && contact && service && car){
+      fetch("https://vic-server.vercel.app/sendBookingemail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -66,6 +69,7 @@ const Header = ({ setLanguage }) => {
     }).then((res) => 
     {
       if(res.status===200){
+        document.getElementById("my_modal_2").close();
         toast.success("Your Booking is successful");
         fetch("https://vic-server.vercel.app/bookingData", {
       method: "POST",
@@ -76,6 +80,8 @@ const Header = ({ setLanguage }) => {
     }).then(res=>res.json())
     }}
     );
+    }
+    
 
     setContact("");
     setEmail("");
@@ -112,7 +118,7 @@ const Header = ({ setLanguage }) => {
             className="nav-item button"
             onClick={() => document.getElementById("my_modal_2").showModal()}
           >
-            BOOK A CONSULTAION
+            Book a consultaion
           </div>
           <div className="nav-item button" onClick={() => navigate("/login")}>
             Login
@@ -130,7 +136,7 @@ const Header = ({ setLanguage }) => {
           className="bookButton"
           onClick={() => document.getElementById("my_modal_2").showModal()}
         >
-          Book Now
+          BOOK NOW
         </div>
         <div className="arrow-container">
           <div className="arrow-down"></div>
@@ -152,7 +158,7 @@ const Header = ({ setLanguage }) => {
       </div>
       <ToastContainer />
       <dialog id="my_modal_2" className="modal">
-        <div className="modal-box modalArea">
+        <div className="modal-box modalArea2">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute bg-black right-2 top-2">
@@ -160,7 +166,7 @@ const Header = ({ setLanguage }) => {
             </button>
           </form>
           <div className="p-2 w-full">
-            <div className="relative">
+            <div className="relative  flex justify-evenly items-center gap-2">
               <label
                 for="name"
                 className="leading-7 text-sm text-black font-semibold"
@@ -173,12 +179,16 @@ const Header = ({ setLanguage }) => {
                 name="name"
                 value={name}
                 onChange={handleNameChange}
-                className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-1/2 ml-8 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
+              
             </div>
+            {
+                clicked && !name && <div className="ml-4 text-red-700 mt-1 text-sm text-center">Enter your name</div> 
+              }
           </div>
           <div className="p-2 w-full">
-            <div className="relative">
+            <div className="relative  flex justify-evenly items-center gap-2">
               <label
                 for="email"
                 className="leading-7 text-sm text-black font-semibold"
@@ -191,17 +201,20 @@ const Header = ({ setLanguage }) => {
                 name="email"
                 value={email}
                 onChange={handleEmailChange}
-                className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-1/2 ml-8 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
+            {
+                clicked && !email && <div className="ml-4 text-red-700 mt-1 text-sm text-center">Enter your Email</div> 
+              }
           </div>
           <div className="p-2 w-full">
-            <div className="relative">
+            <div className="relative  flex justify-evenly items-center gap-2">
               <label
                 for="number"
                 className="leading-7 text-sm text-black font-semibold"
               >
-                Contact Number
+                Contact
               </label>
               <input
                 type="number"
@@ -209,12 +222,15 @@ const Header = ({ setLanguage }) => {
                 name="number"
                 value={contact}
                 onChange={handleContactChange}
-                className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-1/2 ml-5 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
+            {
+                clicked && !contact && <div className="ml-8 text-red-700 mt-1 text-sm text-center">Enter your Contact</div> 
+              }
           </div>
           <div className="p-2 w-full">
-            <div className="relative">
+            <div className="relative  flex justify-evenly items-center gap-2 ">
               <label
                 for="number"
                 className="leading-7 text-sm text-black font-semibold "
@@ -223,15 +239,18 @@ const Header = ({ setLanguage }) => {
               </label>
               <div>
                 <DatePicker
-                  className="w-full cursor-pointer bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className="w-1/2 ml-10 cursor-pointer bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   selected={startDate}
                   onChange={(date) => setStartDate(date)}
                 />
               </div>
             </div>
+            {
+                clicked && !startDate && <div className=" text-red-700 mt-1 text-sm text-center">Select your Date</div> 
+              }
           </div>
           <div className="p-2 w-full">
-            <div className="relative">
+            <div className="relative flex justify-evenly items-center gap-2">
               <label
                 for="time"
                 className="leading-7 text-sm text-black font-semibold"
@@ -243,17 +262,20 @@ const Header = ({ setLanguage }) => {
                 name="time"
                 value={time}
                 onChange={handleTime}
-                className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-1/2 ml-12 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
                 <option value="">Select</option>
-                <option value="10AM - 6PM">10AM - 6PM</option>
-                <option value="12AM - 10PM">12AM - 10PM</option>
-                <option value="6PM - 6AM">6PM - 6AM</option>
+                <option value="10AM - 12PM">10AM - 12PM</option>
+                <option value="12PM - 3PM">12PM - 3PM</option>
+                <option value="3PM - 6PM">3PM - 6PM</option>
               </select>
             </div>
+            {
+                clicked && !time && <div className="ml-6 text-red-700 mt-1 text-sm text-center">Select your time</div> 
+              }
           </div>
           <div className="p-2 w-full">
-            <div className="relative">
+            <div className="relative  flex justify-evenly items-center gap-2">
               <label
                 for="time"
                 className="leading-7 text-sm text-black font-semibold"
@@ -265,7 +287,7 @@ const Header = ({ setLanguage }) => {
                 name="car"
                 value={car}
                 onChange={handleCarChange}
-                className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-1/2 ml-4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
                 <option value="">Select</option>
                 <option value="Toyota">Toyota</option>
@@ -275,21 +297,24 @@ const Header = ({ setLanguage }) => {
                 <option value="Ferrari">Ferrari</option>
               </select>
             </div>
+            {
+                clicked && !car && <div className="ml-5 text-red-700 mt-1 text-sm text-center">Select your car </div> 
+              }
           </div>
           <div className="p-2 w-full">
-            <div className="relative">
+            <div className="relative  flex justify-evenly items-center gap-2">
               <label
                 for="time"
                 className="leading-7 text-sm text-black font-semibold"
               >
-                Type Of Service Required
+                Service Type
               </label>
               <select
                 id="service"
                 name="service"
                 value={service}
                 onChange={handleService}
-                className="w-full py-2 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-1/2 py-2 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
                 <option value="">
                   Select
@@ -309,6 +334,9 @@ const Header = ({ setLanguage }) => {
                 <option value="Others">Others</option>
               </select>
             </div>
+            {
+                clicked && !service && <div className=" ml-10 text-red-700 mt-1 text-sm text-center">Select your service</div> 
+              }
           </div>
           <div className="p-2 w-full">
             <button

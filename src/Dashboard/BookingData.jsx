@@ -15,7 +15,7 @@ const BookingData = () => {
      <div class="">
   <div class="">
     <div>
-      <h2 class="text-2xl font-semibold leading-tight text-center my-5">Booking Information</h2>
+      <h2 class="text-2xl font-semibold leading-tight text-center my-5">Upcoming Booking Information</h2>
     </div>
     <div class=" ">
       <div
@@ -73,7 +73,7 @@ const BookingData = () => {
                   aria-hidden
                   className={`absolute inset-0 opacity-50 rounded-full`}
                 ></span>
-                <span className="relative">{invoice.date}</span>
+                <span className="relative">{new Date(invoice.date).toLocaleDateString()}</span>
               </span>
             </td>
             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
