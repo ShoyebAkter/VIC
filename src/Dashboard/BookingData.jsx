@@ -3,16 +3,42 @@ import "./Booking.css";
 
 const BookingData = () => {
   const [data,setData]=useState([])
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://vic-server.vercel.app/bookingData")
       .then((res) => res.json())
-      .then((result) => setData(result))
+      .then((result) => {
+        // Filter out objects that have the action: "deleted"
+        const filteredData = result.filter(item => item.action !== "deleted");
+        setData(filteredData); // Set the filtered data to state
+      })
       .catch((error) => console.error(error));
-  },[])
-  console.log(data)
+  }, [data]);
+  // console.log(data)
+
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch('https://vic-server.vercel.app/deleteBooking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id }),
+      });
+  
+      const data = await response.json();
+      if (response.ok) {
+        console.log(data.message); // Booking marked as deleted
+        // You may want to update the UI accordingly
+      } else {
+        console.error(data.message); // Handle the error
+      }
+    } catch (error) {
+      console.error("Error deleting booking:", error);
+    }
+  };
   return (
     <div className="tableContainer">
-     <div class="">
+     <div class="px-5">
   <div class="">
     <div>
       <h2 class="text-2xl font-semibold leading-tight text-center my-5">Upcoming Booking Information</h2>
@@ -37,10 +63,16 @@ const BookingData = () => {
             Date
           </th>
           <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+            Time
+          </th>
+          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
           Car Model
           </th>
           <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
           Car Service
+          </th>
+          <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+          Action
           </th>
           
         </tr>
@@ -77,10 +109,18 @@ const BookingData = () => {
               </span>
             </td>
             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+            {invoice.time}
+            </td>
+            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
             {invoice.car}
             </td>
             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
             {invoice.service}
+            </td>
+            <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
+            <span
+            onClick={() => handleDelete(invoice._id)}
+             className="bg-yellow-400 p-2 cursor-pointer rounded-xl">Delete</span>
             </td>
           </tr>
         ))}
