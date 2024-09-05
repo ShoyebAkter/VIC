@@ -3,6 +3,7 @@ import BookingData from './BookingData'
 import {  signOut } from "firebase/auth";
 import { auth } from '../firebase.init';
 import { useNavigate } from 'react-router-dom';
+import './Booking.css'
 const Dashboard = () => {
   const navigate=useNavigate();
   const signOutData=()=>{
@@ -13,7 +14,7 @@ const Dashboard = () => {
     });
   }
   return (
-    <div className=''>
+    <div className='dashboard'>
       <nav >
         <div className="flex justify-between items-center mx-10">
           <img className="headerLogo" src="/logo2.png" alt="" />

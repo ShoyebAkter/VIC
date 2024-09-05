@@ -92,8 +92,8 @@
     font-size: 20px;
     z-index: 100; /* Ensures the dropdown stays above other elements */
   }
-  .react-datepicker-wrapper{
-    width: 100%;
+  .react-datepicker__input-container input{
+    width: 370px;
   }
   .language-dropdown select {
     margin-left: 15px;

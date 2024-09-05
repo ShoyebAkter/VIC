@@ -15,7 +15,7 @@ const BookingData = () => {
   }, [data]);
   // console.log(data)
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id,email) => {
     try {
       const response = await fetch('https://vic-server.vercel.app/deleteBooking', {
         method: 'POST',
@@ -27,6 +27,16 @@ const BookingData = () => {
   
       const data = await response.json();
       if (response.ok) {
+        const thanksData={
+          email:email
+        }
+        fetch("https://vic-server.vercel.app/sendThanksemail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(thanksData),
+    }).
         console.log(data.message); // Booking marked as deleted
         // You may want to update the UI accordingly
       } else {
@@ -119,8 +129,8 @@ const BookingData = () => {
             </td>
             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
             <span
-            onClick={() => handleDelete(invoice._id)}
-             className="bg-yellow-400 p-2 cursor-pointer rounded-xl">Delete</span>
+            onClick={() => handleDelete(invoice._id,invoice.email)}
+             className="bg-yellow-400 p-2 cursor-pointer rounded-xl">Remove</span>
             </td>
           </tr>
         ))}

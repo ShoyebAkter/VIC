@@ -165,8 +165,8 @@ const Header = ({ setLanguage }) => {
               ✕
             </button>
           </form>
-          <div className="p-2 w-full">
-            <div className="relative  flex justify-evenly items-center gap-2">
+          <div className="p-2 w-full mt-10">
+            <div className="relative  flex items-center gap-2">
               <label
                 for="name"
                 className="leading-7 text-sm text-black font-semibold"
@@ -179,7 +179,7 @@ const Header = ({ setLanguage }) => {
                 name="name"
                 value={name}
                 onChange={handleNameChange}
-                className="w-1/2 ml-8 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full ml-8 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
               
             </div>
@@ -188,7 +188,7 @@ const Header = ({ setLanguage }) => {
               }
           </div>
           <div className="p-2 w-full">
-            <div className="relative  flex justify-evenly items-center gap-2">
+            <div className="relative  flex items-center gap-2">
               <label
                 for="email"
                 className="leading-7 text-sm text-black font-semibold"
@@ -201,7 +201,7 @@ const Header = ({ setLanguage }) => {
                 name="email"
                 value={email}
                 onChange={handleEmailChange}
-                className="w-1/2 ml-8 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full ml-9 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
             {
@@ -209,7 +209,7 @@ const Header = ({ setLanguage }) => {
               }
           </div>
           <div className="p-2 w-full">
-            <div className="relative  flex justify-evenly items-center gap-2">
+            <div className="relative  flex  items-center gap-2">
               <label
                 for="number"
                 className="leading-7 text-sm text-black font-semibold"
@@ -222,7 +222,7 @@ const Header = ({ setLanguage }) => {
                 name="number"
                 value={contact}
                 onChange={handleContactChange}
-                className="w-1/2 ml-5 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full ml-5 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
             </div>
             {
@@ -230,7 +230,7 @@ const Header = ({ setLanguage }) => {
               }
           </div>
           <div className="p-2 w-full">
-            <div className="relative  flex justify-evenly items-center gap-2 ">
+            <div className="relative  flex  items-center gap-2 ">
               <label
                 for="number"
                 className="leading-7 text-sm text-black font-semibold "
@@ -239,7 +239,7 @@ const Header = ({ setLanguage }) => {
               </label>
               <div>
                 <DatePicker
-                  className="w-1/2 ml-10 cursor-pointer bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className=" ml-10 cursor-pointer bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   selected={startDate}
                   onChange={(date) => setStartDate(date)}
                 />
@@ -250,7 +250,7 @@ const Header = ({ setLanguage }) => {
               }
           </div>
           <div className="p-2 w-full">
-            <div className="relative flex justify-evenly items-center gap-2">
+            <div className="relative flex  items-center gap-2">
               <label
                 for="time"
                 className="leading-7 text-sm text-black font-semibold"
@@ -262,7 +262,7 @@ const Header = ({ setLanguage }) => {
                 name="time"
                 value={time}
                 onChange={handleTime}
-                className="w-1/2 ml-12 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full ml-9 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
                 <option value="">Select</option>
                 <option value="10AM - 12PM">10AM - 12PM</option>
@@ -287,7 +287,7 @@ const Header = ({ setLanguage }) => {
                 name="car"
                 value={car}
                 onChange={handleCarChange}
-                className="w-1/2 ml-4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full ml-4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
                 <option value="">Select</option>
                 <option value="Toyota">Toyota</option>
@@ -314,7 +314,7 @@ const Header = ({ setLanguage }) => {
                 name="service"
                 value={service}
                 onChange={handleService}
-                className="w-1/2 py-2 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full py-2 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
                 <option value="">
                   Select

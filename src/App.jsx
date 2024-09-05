@@ -17,7 +17,7 @@ function App() {
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<SignUp />} />
-        <Route exact path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />}/>
+        <Route exact path="/dashboard" element={<Dashboard />}/>
     </Routes>
     </AuthProvider>
     </>
