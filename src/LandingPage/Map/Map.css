@@ -65,7 +65,6 @@
   }
  
   .workSection{
-    width: 800px;
     margin-right: 40px;
     padding: 20px; 
     
@@ -84,7 +83,7 @@
     text-align: justify;
     color: white;
     font-size: 20px;
-    font-family: "Raleway Regular", sans-serif;
+    font-family: "Raleway Regular";
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
