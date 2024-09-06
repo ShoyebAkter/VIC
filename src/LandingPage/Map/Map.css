@@ -65,7 +65,7 @@
   }
  
   .workSection{
-    width: 600px;
+    width: 800px;
     margin-right: 40px;
     padding: 20px; 
     
@@ -76,12 +76,12 @@
     font-family: "Barlow Condensed", sans-serif;
   font-weight: 700;
   font-style: normal;
-    font-size: 49px;
+    font-size: 65.33px;
   }
   .workDescription{
     text-align: right;
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;

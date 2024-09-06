@@ -280,14 +280,14 @@ const Header = ({ setLanguage }) => {
                 for="time"
                 className="leading-7 text-sm text-black font-semibold"
               >
-                Car Model
+                Car
               </label>
               <select
                 id="car"
                 name="car"
                 value={car}
                 onChange={handleCarChange}
-                className="w-full ml-4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full ml-12 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
                 <option value="">Select</option>
                 <option value="Toyota">Toyota</option>
@@ -307,14 +307,14 @@ const Header = ({ setLanguage }) => {
                 for="time"
                 className="leading-7 text-sm text-black font-semibold"
               >
-                Service Type
+                Service
               </label>
               <select
                 id="service"
                 name="service"
                 value={service}
                 onChange={handleService}
-                className="w-full py-2 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full ml-5 py-2 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
                 <option value="">
                   Select

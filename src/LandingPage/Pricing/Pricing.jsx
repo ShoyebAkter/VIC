@@ -46,25 +46,25 @@ const Pricing = ({ language }) => {
             </button>
           </form>
           <div class="p-2 w-full mt-10">
-          <div class="relative flex gap-5">
+          <div class="relative flex gap-5 items-center">
             <label for="name" class="leading-7 text-sm ">Name</label>
             <input type="text" id="name" name="name" class="w-full ml-4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
           </div>
         </div>
         <div class="p-2 w-full mt-5">
-          <div class="relative flex gap-5">
+          <div class="relative flex gap-5 items-center">
             <label for="email" class="leading-7 text-sm ">Email</label>
-            <input type="email" id="email" name="email" class="w-full ml-4 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+            <input type="email" id="email" name="email" class="w-full ml-5 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
           </div>
         </div>
         <div class="p-2 w-full mt-5">
-          <div class="relative flex gap-5">
+          <div class="relative flex gap-5 items-center">
             <label for="contact" class="leading-7 text-sm ">Number</label>
-            <input type="number" id="contact" name="contact" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+            <input type="number" id="contact" name="contact" class="w-full ml-1 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
           </div>
         </div>
-        <div class="p-2 w-full">
-          <div class="relative">
+        <div class="p-2 w-full mt-5">
+          <div class="relative flex gap-5 items-center">
             <label for="message" class="leading-7 text-sm ">Message</label>
             <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
           </div>

@@ -130,7 +130,7 @@ const BookingData = () => {
             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm ">
             <span
             onClick={() => handleDelete(invoice._id,invoice.email)}
-             className="bg-yellow-400 p-2 cursor-pointer rounded-xl">Remove</span>
+             className="bg-yellow-400 p-2 cursor-pointer rounded-xl">Done</span>
             </td>
           </tr>
         ))}
