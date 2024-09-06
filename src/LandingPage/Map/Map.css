@@ -73,8 +73,8 @@
   .workPlace{
     color: #f5db0e;
     text-align: right;
-    font-family: "Barlow Condensed", sans-serif;
-  font-weight: 700;
+    font-family: "Barlow Condensed";
+    font-weight: 300;
   font-style: normal;
     font-size: 65.33px;
   }
@@ -82,7 +82,7 @@
     text-align: right;
     color: white;
     font-size: 20px;
-    font-family: "Raleway", sans-serif;
+    font-family: "Raleway Regular", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -90,14 +90,14 @@
 
   .workLine{
     position: absolute;
-    top: 1px;
+    top: 30px;
     right: 0px;
   }
   .rightline{
     width: 35px;
     height: 70px;
     background-color: #f5db0e;
-    margin: 5px 0;
+    margin: 15px 0;
   }
 
 

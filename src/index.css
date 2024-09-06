@@ -3,12 +3,6 @@
 @tailwind utilities;
 
 
-@font-face {
-  font-family: 'DenseBold';
-  src: url('./fonts/DenseBold.otf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 a {
   font-weight: 500;
   color: #646cff;

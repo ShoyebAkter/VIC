@@ -12,17 +12,22 @@
   display: flex;
   justify-content: center;
   margin-inline: 150px;
-  font-family: 'DenseBold, sans-serif';
+  
   font-size: 21.33px;
 }
   .modalArea2{
     background-color: rgba(169, 169, 169, 0.8)    !important;
+    width: 900px !important;
+  }
+
+  .labelDesign{
+    width: 150px !important;
   }
   .navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-family: "Raleway", sans-serif;
+    font-family: "Raleway Regular", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -32,21 +37,19 @@
   }
   .nav-item {
     color: #f5db0e;
-    font-weight: 300;
+    font-weight: 500;
     cursor: pointer;
   }
   
   
-  .nav-item.button {
+  .button {
     background-color: #F4DC13;
     padding: 5px;
     border-radius: 5px;
     color: black;
     padding-inline: 30px;
-    font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
+    font-family: "Raleway Bold";
+    font-weight: 700;
   }
   
   .centered-title {
@@ -66,6 +69,10 @@
     position: absolute;
     bottom: 20%;
     left: 45%;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: "Raleway Bold";
+    font-weight: 700;
   }
   
   .bookButton{
@@ -74,12 +81,7 @@
     margin-inline: auto;
     border-radius: 5px;
     padding-inline: 10px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
+    
   }
   .bottom-lines {
     position: absolute;
@@ -105,7 +107,7 @@
     z-index: 100; /* Ensures the dropdown stays above other elements */
   }
   .react-datepicker__input-container input{
-    width: 370px;
+    width: 330px;
   }
   .language-dropdown select {
     margin-left: 15px;

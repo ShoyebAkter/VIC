@@ -17,13 +17,14 @@
     color: #f5db0e;
     margin-bottom: 10px;
     margin-top: 20px;
-    font-family: 'DenseBold, sans-serif';
+    font-family: "Barlow Condensed";
+    font-weight: 300;
     font-size: 65.33px;
 }
 .priceDescription {
   text-align: center;
   font-size: 20px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway Regular", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

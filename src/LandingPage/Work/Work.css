@@ -14,10 +14,10 @@
     margin-left: 30px;
   }
   .howToDo{
-    color: yellow;
+    color: #f5db0e;
     text-align: left;
-    font-family: "Barlow Condensed", sans-serif;
-  font-weight: 700;
+    font-family: "Barlow Condensed";
+    font-weight: 300;
   font-style: normal;
     font-size: 65.33px;
   }
@@ -25,7 +25,7 @@
     text-align: left;
     color: white;
     font-size: 20px;
-    font-family: "Raleway", sans-serif;
+    font-family: "Raleway Regular", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
