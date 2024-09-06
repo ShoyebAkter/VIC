@@ -8,7 +8,7 @@
     position: relative;
   }
   .description{
-    width: 900px;
+    width: 600px;
     background-color: black;
     padding: 20px;
     margin-left: 30px;
@@ -22,13 +22,15 @@
   font-style: normal;
   }
   .mydescription{
-    text-align: left;
+    text-align: justify;
     color: white;
     font-size: 20px;
     font-family: "Raleway Regular", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  line-height: 1.6; /* Adjust line height for consistent spacing */
+    max-width: 500px;
   }
 
     

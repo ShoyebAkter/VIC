@@ -13,7 +13,13 @@ const Header = ({ setLanguage }) => {
   const [car, setCar] = useState("");
   const [service, setService] = useState("");
   const [time, setTime] = useState("");
-  const [clicked,setClicked]=useState(false)
+  const [nameError, setNameError] = useState(false);
+const [emailError, setEmailError] = useState(false);
+const [contactError, setContactError] = useState(false);
+const [dateError, setDateError] = useState(false);
+const [timeError, setTimeError] = useState(false);
+const [carError, setCarError] = useState(false);
+const [serviceError, setServiceError] = useState(false);
 // toasttttttttttt
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -47,7 +53,13 @@ const Header = ({ setLanguage }) => {
   // console.log(name,email,contact,startDate,time)
 
   const handleBookingData = () => {
-    setClicked(true)
+    setNameError(!name);
+  setEmailError(!email);
+  setContactError(!contact);
+  setDateError(!startDate);
+  setTimeError(!time);
+  setCarError(!car);
+  setServiceError(!service);
     const bookingInfo = {
       name: name,
       email: email,
@@ -69,6 +81,12 @@ const Header = ({ setLanguage }) => {
     }).then((res) => 
     {
       if(res.status===200){
+        setContact("");
+    setEmail("");
+    setName("");
+    setStartDate("");
+    setCar("");
+    setService("");
         document.getElementById("my_modal_2").close();
         toast.success("Your Booking is successful");
         fetch("https://vic-server.vercel.app/bookingData", {
@@ -83,12 +101,7 @@ const Header = ({ setLanguage }) => {
     }
     
 
-    setContact("");
-    setEmail("");
-    setName("");
-    setStartDate("");
-    setCar("");
-    setService("");
+    
   };
 
   function toggleMenu() {
@@ -184,7 +197,7 @@ const Header = ({ setLanguage }) => {
               
             </div>
             {
-                clicked && !name && <div className="ml-4 text-red-700 mt-1 text-sm text-center">Enter your name</div> 
+                nameError && <div className="ml-4 text-red-700 mt-1 text-sm text-center">Enter your name</div> 
               }
           </div>
           <div className="p-2 w-full">
@@ -205,7 +218,7 @@ const Header = ({ setLanguage }) => {
               />
             </div>
             {
-                clicked && !email && <div className="ml-4 text-red-700 mt-1 text-sm text-center">Enter your Email</div> 
+                emailError && <div className="ml-4 text-red-700 mt-1 text-sm text-center">Enter your Email</div> 
               }
           </div>
           <div className="p-2 w-full">
@@ -226,7 +239,7 @@ const Header = ({ setLanguage }) => {
               />
             </div>
             {
-                clicked && !contact && <div className="ml-8 text-red-700 mt-1 text-sm text-center">Enter your Contact</div> 
+                contactError && <div className="ml-8 text-red-700 mt-1 text-sm text-center">Enter your Contact</div> 
               }
           </div>
           <div className="p-2 w-full">
@@ -246,7 +259,7 @@ const Header = ({ setLanguage }) => {
               </div>
             </div>
             {
-                clicked && !startDate && <div className=" text-red-700 mt-1 text-sm text-center">Select your Date</div> 
+                dateError && <div className=" text-red-700 mt-1 text-sm text-center">Select your Date</div> 
               }
           </div>
           <div className="p-2 w-full">
@@ -271,7 +284,7 @@ const Header = ({ setLanguage }) => {
               </select>
             </div>
             {
-                clicked && !time && <div className="ml-6 text-red-700 mt-1 text-sm text-center">Select your time</div> 
+                timeError && <div className="ml-6 text-red-700 mt-1 text-sm text-center">Select your time</div> 
               }
           </div>
           <div className="p-2 w-full">
@@ -298,7 +311,7 @@ const Header = ({ setLanguage }) => {
               </select>
             </div>
             {
-                clicked && !car && <div className="ml-5 text-red-700 mt-1 text-sm text-center">Select your car </div> 
+                carError && <div className="ml-5 text-red-700 mt-1 text-sm text-center">Select your car </div> 
               }
           </div>
           <div className="p-2 w-full">
@@ -335,7 +348,7 @@ const Header = ({ setLanguage }) => {
               </select>
             </div>
             {
-                clicked && !service && <div className=" ml-10 text-red-700 mt-1 text-sm text-center">Select your service</div> 
+                serviceError && <div className=" ml-10 text-red-700 mt-1 text-sm text-center">Select your service</div> 
               }
           </div>
           <div className="p-2 w-full">

@@ -19,8 +19,8 @@ const Map = ({language}) => {
             </span>:
             <span>
             We offer our services throughout the Orlando, Florida area and its
-            surroundings.<br/> No matter where you are in this region, we will come
-            to you to ensure your<br/> vehicle is in the best condition
+            surroundings. No matter where you are in this region, we will come
+            to you to ensure your vehicle is in the best condition
             </span>
           }
             
