@@ -22,7 +22,7 @@
   font-style: normal;
   }
   .mydescription{
-    text-align: justify;
+    
     color: white;
     font-size: 20px;
     font-family: "Raleway Regular", sans-serif;
@@ -31,6 +31,7 @@
   font-style: normal;
   line-height: 1.6; /* Adjust line height for consistent spacing */
     max-width: 500px;
+    text-align: justify;
   }
 
     
