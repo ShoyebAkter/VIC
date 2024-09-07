@@ -25,6 +25,7 @@ const [serviceError, setServiceError] = useState(false);
 useEffect(()=>{
   window.onload = () => {
     const navbar = document.querySelector(".navbar");
+    
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     
     if (mediaQuery.matches) { // If mobile view
@@ -117,7 +118,9 @@ useEffect(()=>{
 
   function toggleMenu() {
       const navbar = document.querySelector(".navbar");
+      const vic = document.querySelector(".vic");
     navbar.style.display = navbar.style.display === "flex" ? "none" : "flex";
+    vic.style.display=navbar.style.display=== "flex" ? "none" : "block";
     
   }
   
