@@ -263,7 +263,7 @@ const [serviceError, setServiceError] = useState(false);
               }
           </div>
           <div className="p-2 w-full">
-            <div className="relative flex  items-center gap-2">
+            <div className="relative flex timeSec items-center gap-2">
               <label
                 for="time"
                 className="leading-7 text-sm text-black font-semibold labelDesign"

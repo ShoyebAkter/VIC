@@ -17,7 +17,7 @@
 }
   .modalArea2{
     background-color: rgba(169, 169, 169, 0.8)    !important;
-    width: 900px !important;
+    
   }
 
   .labelDesign{
@@ -188,9 +188,14 @@
     }
   }
 @media (max-width: 768px) {
+  
   .header{
     display: flex;
     justify-content: space-between;
+  }
+  .react-datepicker__input-container input{
+    width: 100%;
+    padding-left: 100px;
   }
   .navbar {
     display: none; /* Hide the navbar on small screens */
