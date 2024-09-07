@@ -128,10 +128,10 @@ const [serviceError, setServiceError] = useState(false);
             Pricing
           </a>
           <div
-            className=" button"
+            className="nav-item button"
             onClick={() => document.getElementById("my_modal_2").showModal()}
           >
-            Book a consultaion
+            Book a consultation
           </div>
           <div className="nav-item button" onClick={() => navigate("/login")}>
             Login

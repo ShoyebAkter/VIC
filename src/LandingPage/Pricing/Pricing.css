@@ -38,9 +38,9 @@
     margin-inline: auto;
     background-color: #F4DC13;
     color: black;
-    width: 200px;
+    width: 250px;
     border-radius: 5px;
-    padding-inline: 5px;
+    padding: 5px;
 }
 .centerLine {
     position: absolute;

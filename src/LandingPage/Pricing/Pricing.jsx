@@ -35,7 +35,7 @@ const Pricing = ({ language }) => {
         className="contactButton "
         onClick={() => document.getElementById("my_modal_3").showModal()}
       >
-        Contact Us
+        CONTACT US
       </div>
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box modalArea">
