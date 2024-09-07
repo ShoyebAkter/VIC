@@ -29,8 +29,8 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  line-height: 1.6; /* Adjust line height for consistent spacing */
-    max-width: 500px;
+  line-height: 1.6;
+  max-width: 500px;
     text-align: justify;
   }
 
@@ -111,20 +111,22 @@
 @media (max-width: 768px) {
   
   .description {
-    width: 500px; /* Further reduce width */
+    width: 220px; /* Further reduce width */
     padding: 10px; /* Further reduce padding */
   }
 
   .aboutme {
-    font-size: 1.5em; /* Smaller font size */
+    font-size: 33px; /* Smaller font size */
   }
 
   .mydescription {
-    font-size: 20px; /* Smaller font size */
+    font-size: 10px; /* Smaller font size */
+    max-width: 200px;
   }
 
-
+ 
   .about-container {
     text-align: center; /* Center align text */
+    width: 100%;
   }
 }

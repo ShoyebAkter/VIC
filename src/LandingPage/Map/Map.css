@@ -101,20 +101,46 @@
     margin: 15px 0;
   }
 
-
-  @media (max-width: 768px) {
-    .workDescription{
-      font-size: 20px;
-    }
-    .workSection{
-      width: 400px;
-      margin-right: 40px;
-      padding: 5px; 
-      
-    }
-  }
   @media (max-width: 1200px) {
     .workDescription{
       font-size: 24px;
     }
   }
+  @media (max-width: 768px) {
+    .workLine{
+      top: 0px;
+      
+    }
+    .rightline{
+      width: 15px;
+      height: 30px;
+    }
+  
+    .workDescription{
+      font-size: 10px;
+      max-width: 200px;
+    }
+    .workSection{
+      width: 220px;
+      margin-right: 20px;
+      padding: 5px; 
+      
+    }
+    .workPlace{
+      font-size: 33px;
+    }
+    .orlando {
+      top: 50%;
+      left: 10%;
+      width: 60px;
+      height: 60px;
+  }
+  .mapLogo {
+    width: 25px;
+    height: 40px;
+    border-color: 1px solid black;
+    object-fit: cover;  /* Ensures the image covers the entire div without distortion */
+    transform: rotate(45deg);  /* Corrects the rotation for the image */
+}
+  }
+ 

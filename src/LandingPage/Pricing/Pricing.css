@@ -33,7 +33,7 @@
 .contactButton{
     margin-top: 20px;
     text-align: center;
-    font-weight: 700;
+    font-weight: 800;
     cursor: pointer;
     margin-inline: auto;
     background-color: #F4DC13;
@@ -41,6 +41,7 @@
     width: 250px;
     border-radius: 5px;
     padding: 5px;
+    font-size: 20px;
 }
 .centerLine {
     position: absolute;
@@ -74,16 +75,19 @@
     background-color: #f5db0e;
     margin: 5px 0;
   }
-
-  @media (max-width: 768px) {
-    .priceDescription{
-      font-size: 20px;
-      margin-inline: 15px;
-    }
-  }
   @media (max-width: 1200px) {
     .priceDescription{
       font-size: 24px;
       margin-inline: 10px;
     }
   }
+  @media (max-width: 768px) {
+    .priceDescription{
+      font-size: 12px;
+      margin-inline: 15px;
+    }
+    .priceTag{
+      font-size: 33px;
+    }
+  }
+  
