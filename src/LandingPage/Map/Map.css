@@ -107,6 +107,9 @@
     }
   }
   @media (max-width: 768px) {
+    .mapContainer{
+      height: 50vh;
+    }
     .workLine{
       top: 0px;
       

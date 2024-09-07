@@ -9,3 +9,8 @@ font-family: "Raleway Regular";
   font-weight: 400;
   font-style: normal;
 }
+@media (max-width: 768px) {
+  footer p {
+    font-size: 10px;
+  }
+}

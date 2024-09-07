@@ -68,12 +68,16 @@
     }
   }
   @media (max-width: 768px) {
+    .workContainer{
+      height: 100%;
+    }
     .myWorkdescription{
       font-size: 10px;
       max-width: 200px;
     }
     .newdescription{
       width: 220px;
+      margin-left: 5px;
     }
     .howToDo{
       font-size: 33px;

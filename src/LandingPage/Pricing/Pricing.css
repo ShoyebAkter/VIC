@@ -82,6 +82,15 @@
     }
   }
   @media (max-width: 768px) {
+    .centeryellowline {
+      width: 70px;
+      height: 20px;
+      background-color: #f5db0e;
+      margin: 5px 0;
+    }
+    .pricingContainer{
+      height: 100%;
+    }
     .priceDescription{
       font-size: 12px;
       margin-inline: 15px;

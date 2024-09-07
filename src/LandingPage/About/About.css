@@ -109,7 +109,10 @@
 }
 
 @media (max-width: 768px) {
-  
+  .about-container {
+    height: 100%;
+    padding-block: 100px;
+  }
   .description {
     width: 220px; /* Further reduce width */
     padding: 10px; /* Further reduce padding */

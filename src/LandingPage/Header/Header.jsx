@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,6 +21,17 @@ const [timeError, setTimeError] = useState(false);
 const [carError, setCarError] = useState(false);
 const [serviceError, setServiceError] = useState(false);
 // toasttttttttttt
+
+useEffect(()=>{
+  window.onload = () => {
+    const navbar = document.querySelector(".navbar");
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    
+    if (mediaQuery.matches) { // If mobile view
+      navbar.style.display = "none";
+    }
+  };
+},[])
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -105,9 +116,11 @@ const [serviceError, setServiceError] = useState(false);
   };
 
   function toggleMenu() {
-    const navbar = document.querySelector(".navbar");
+      const navbar = document.querySelector(".navbar");
     navbar.style.display = navbar.style.display === "flex" ? "none" : "flex";
+    
   }
+  
   return (
     <div className="header-container">
       <nav className="header">
