@@ -108,7 +108,8 @@ useEffect(()=>{
       },
       body: JSON.stringify(bookingInfo),
     }).then(res=>res.json())
-    }}
+    }
+  }
     );
     }
     
