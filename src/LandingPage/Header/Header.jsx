@@ -120,8 +120,10 @@ useEffect(()=>{
   function toggleMenu() {
       const navbar = document.querySelector(".navbar");
       const vic = document.querySelector(".vic");
+      const bookButtonArea = document.querySelector(".bookButtonArea");
     navbar.style.display = navbar.style.display === "flex" ? "none" : "flex";
     vic.style.display=navbar.style.display=== "flex" ? "none" : "block";
+    bookButtonArea.style.display=bookButtonArea.style.display=== "block" ? "none" : "block";
     
   }
   

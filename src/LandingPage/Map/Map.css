@@ -108,7 +108,7 @@
   }
   @media (max-width: 768px) {
     .mapContainer{
-      height: 50vh;
+      height: 30vh;
     }
     .workLine{
       top: 0px;
@@ -133,8 +133,8 @@
       font-size: 33px;
     }
     .orlando {
-      top: 50%;
-      left: 10%;
+      top: 20%;
+      left: 7%;
       width: 60px;
       height: 60px;
   }
