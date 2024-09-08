@@ -249,4 +249,8 @@
   .vic {
     width: 80%; /* Make logo responsive */
   }
+  .line {
+    width: 10px;
+    height: 50px;
+  }
 }

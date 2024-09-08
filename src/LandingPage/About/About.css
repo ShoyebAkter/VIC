@@ -109,6 +109,10 @@
 }
 
 @media (max-width: 768px) {
+  .aboutrightline{
+    width: 10px;
+    height: 50px;
+  }
   .about-container {
     height: 100%;
   }

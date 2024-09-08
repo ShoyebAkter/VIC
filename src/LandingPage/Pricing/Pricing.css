@@ -82,6 +82,14 @@
     }
   }
   @media (max-width: 768px) {
+    .toprightline1{
+      width: 10px;
+    height: 50px;
+    }
+    .toprightline2{
+      width: 10px;
+    height: 50px;
+    }
     .centeryellowline {
       width: 70px;
       height: 20px;
@@ -98,5 +106,9 @@
     .priceTag{
       font-size: 33px;
     }
+    .contactButton{
+      width: 100px;
+      font-size: 12px;
+  }
   }
   

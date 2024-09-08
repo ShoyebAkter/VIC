@@ -68,6 +68,14 @@
     }
   }
   @media (max-width: 768px) {
+    .rightline1{
+      width: 10px;
+    height: 50px;
+    }
+    .rightline2{
+      width: 10px;
+    height: 50px;
+    }
     .workContainer{
       height: 100%;
     }
