@@ -192,11 +192,11 @@
     height: 50vh;
   }
   .centered-title {
-    top: 20%;
+    top: 25%;
   }
   .headerLogo{
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 40px;
   }
   .header{
     display: flex;
@@ -247,6 +247,6 @@
     font-size: 12px;
   }
   .vic {
-    width: 90%; /* Make logo responsive */
+    width: 80%; /* Make logo responsive */
   }
 }
