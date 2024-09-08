@@ -123,7 +123,7 @@ useEffect(()=>{
       const bookButtonArea = document.querySelector(".bookButtonArea");
     navbar.style.display = navbar.style.display === "flex" ? "none" : "flex";
     vic.style.display=navbar.style.display=== "flex" ? "none" : "block";
-    bookButtonArea.style.display=bookButtonArea.style.display=== "block" ? "none" : "block";
+    bookButtonArea.style.display=navbar.style.display=== "flex" ? "none" : "block";
     
   }
   
