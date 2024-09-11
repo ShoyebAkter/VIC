@@ -33,7 +33,7 @@ const BookingData = () => {
         const thanksData = {
           email: email,
         };
-        fetch("https://vic-server.vercel.app/sendThanksemail", {
+        fetch("http://localhost:3000/sendThanksemail", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

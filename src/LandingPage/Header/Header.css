@@ -1,9 +1,9 @@
 .header-container {
-  background-image: url('/BG1.jpg'); /* Reference your image */
+  background-image: url('/BG1.jpg'); 
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 100vh; /* Adjust the height as needed */
+  height: 100vh;
   color: white; /* Ensure text is visible */
   padding: 20px; /* Optional padding */
   margin-bottom: 30px;

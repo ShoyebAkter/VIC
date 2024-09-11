@@ -8,6 +8,7 @@ import SignUp from './Authentication/SignUp'
 import Dashboard from './Dashboard/Dashboard'
 import ProtectedRoute from './Authentication/ProtectedRoute'
 import { AuthProvider } from './Authentication/Authcontext'
+import './App.css'
 function App() {
 
   return (

@@ -192,7 +192,6 @@ useEffect(()=>{
       <dialog id="my_modal_2" className="modal">
         <div className="modal-box modalArea2">
           <form method="dialog">
-            {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute bg-black right-2 top-2">
               ✕
             </button>
