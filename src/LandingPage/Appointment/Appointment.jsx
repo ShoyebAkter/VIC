@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import ServiceLocation from "./ServiceLocation";
+import CarDetails from "./CarDetails";
 
 const Appointment = () => {
+    const [step,setStep]=useState("")
+    console.log(step)
   return (
     <div>
       <div className="flex justify-between mx-10 mt-4">
@@ -17,7 +20,8 @@ const Appointment = () => {
         <div>
           <div className="text-center ">VIC</div>
           <div className="font-bold text-center my-6">Book a Service Appointment</div>
-          <ServiceLocation/>
+          {step === "" && <ServiceLocation setStep={setStep}/>}
+          {step === "Car" ? <CarDetails setStep={setStep}/>  : ""}
         </div>
       </div>
     </div>

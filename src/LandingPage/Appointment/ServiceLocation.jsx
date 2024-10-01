@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import PropTypes from "prop-types";
 import { IoPartlySunnyOutline } from "react-icons/io5";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-const ServiceLocation = () => {
+const ServiceLocation = ({ setStep }) => {
   const [selectedCenter, setSelectedCenter] = useState(null);
   const [startDate, setStartDate] = useState();
   const [time, setTime] = useState();
-  const navigate=useNavigate()
-  const isButtonDisabled = !time || !startDate || selectedCenter;
+  const navigate = useNavigate();
+  const isButtonDisabled = !selectedCenter|| !time || !startDate ;
   const handleSelect = (center) => {
     setSelectedCenter(center);
   };
+  const changeStep = () => {
+    console.log("clicked");
+    setStep("Car");
+  };
+  //   console.log(setStep)
   return (
     <div>
       <ul className="steps">
@@ -61,13 +67,19 @@ const ServiceLocation = () => {
             </div>
             <div className="flex gap-4">
               <div
-              onClick={()=>setTime("7.00AM")}
-               className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${time==="7.00AM" ? "bg-gray-300":""}`}>
+                onClick={() => setTime("7.00AM")}
+                className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${
+                  time === "7.00AM" ? "bg-gray-300" : ""
+                }`}
+              >
                 7.00 AM
               </div>
               <div
-              onClick={()=>setTime("7.30AM")}
-               className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${time==="7.30AM" ? "bg-gray-300":""}`}>
+                onClick={() => setTime("7.30AM")}
+                className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${
+                  time === "7.30AM" ? "bg-gray-300" : ""
+                }`}
+              >
                 7.30 AM
               </div>
             </div>
@@ -79,23 +91,31 @@ const ServiceLocation = () => {
             </div>
             <div className="flex gap-4">
               <div
-              onClick={()=>setTime("1.00PM")}
-               className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${time==="1.00PM" ? "bg-gray-300":""}`}>
+                onClick={() => setTime("1.00PM")}
+                className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${
+                  time === "1.00PM" ? "bg-gray-300" : ""
+                }`}
+              >
                 1.00 PM
               </div>
               <div
-              onClick={()=>setTime("1.30PM")}
-               className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${time==="1.30PM" ? "bg-gray-300":""}`}>
+                onClick={() => setTime("1.30PM")}
+                className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${
+                  time === "1.30PM" ? "bg-gray-300" : ""
+                }`}
+              >
                 1.30 PM
               </div>
             </div>
           </div>
         </div>
       )}
-      <button disabled={isButtonDisabled}
-    //   onClick={()=>navigate("/")}
+      <button
+        disabled={isButtonDisabled}
+        onClick={changeStep}
         className={`border w-full border-gray-500 text-center py-2 my-6 rounded-lg bg-yellow-400 font-bold cursor-pointer
-        ${isButtonDisabled ===true ? "text-gray-400 bg-yellow-100" : ""}`}>
+        ${isButtonDisabled ? "text-gray-400 bg-yellow-100" : ""}`}
+      >
         Continue
       </button>
     </div>
@@ -103,3 +123,6 @@ const ServiceLocation = () => {
 };
 
 export default ServiceLocation;
+ServiceLocation.propTypes = {
+  setStep: PropTypes.func.isRequired,
+};
