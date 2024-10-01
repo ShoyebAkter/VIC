@@ -20,6 +20,7 @@ const [dateError, setDateError] = useState(false);
 const [timeError, setTimeError] = useState(false);
 const [carError, setCarError] = useState(false);
 const [serviceError, setServiceError] = useState(false);
+
 // toasttttttttttt
 
 useEffect(()=>{
@@ -148,13 +149,13 @@ useEffect(()=>{
           </a>
           <div
             className="nav-item button"
-            onClick={() => document.getElementById("my_modal_2").showModal()}
+            onClick={() => navigate("/appointment")}
           >
             Book a consultation
           </div>
-          <div className="nav-item button" onClick={() => navigate("/login")}>
+          {/* <div className="nav-item button" onClick={() => navigate("/login")}>
             Login
-          </div>
+          </div> */}
         </div>
         <div className="hamburger-menu" onClick={toggleMenu}>
           ☰
@@ -164,16 +165,17 @@ useEffect(()=>{
         <img className="vic" src="/logo1.png" alt="" />
       </div>
       <div className="bookButtonArea">
+      <div className="arrow-container">
+          <div className="arrow-down"></div>
+          <div className="arrow-down"></div>
+        </div>
         <div
           className="bookButton"
-          onClick={() => document.getElementById("my_modal_2").showModal()}
+          onClick={() => navigate("/appointment")}
         >
           BOOK NOW
         </div>
-        <div className="arrow-container">
-          <div className="arrow-down"></div>
-          <div className="arrow-down"></div>
-        </div>
+        
       </div>
 
       <div className="language-dropdown">
@@ -188,7 +190,7 @@ useEffect(()=>{
         <div className="line"></div>
         <div className="line"></div>
       </div>
-      <ToastContainer />
+      {/* <ToastContainer />
       <dialog id="my_modal_2" className="modal">
         <div className="modal-box modalArea2">
           <form method="dialog">
@@ -378,7 +380,7 @@ useEffect(()=>{
             </button>
           </div>
         </div>
-      </dialog>
+      </dialog> */}
       
     </div>
   );

@@ -9,6 +9,7 @@ import Dashboard from './Dashboard/Dashboard'
 import ProtectedRoute from './Authentication/ProtectedRoute'
 import { AuthProvider } from './Authentication/Authcontext'
 import './App.css'
+import Appointment from './LandingPage/Appointment/Appointment'
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<SignUp />} />
+        <Route exact path="/appointment" element={<Appointment />} />
         <Route exact path="/dashboard" element={<Dashboard />}/>
     </Routes>
     </AuthProvider>

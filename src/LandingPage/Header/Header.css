@@ -71,7 +71,6 @@
     left: 47%;
     font-weight: 700;
     cursor: pointer;
-    
   }
   
   .bookButton{
@@ -125,7 +124,7 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column; /* Spacing between arrows */
-    margin-top: 20px;
+    margin-bottom: 20px;
     gap: 20px;
   }
   
