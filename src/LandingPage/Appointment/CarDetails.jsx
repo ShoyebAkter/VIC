@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-
+import { useSelector, useDispatch } from 'react-redux';
+import { setBrand, setPlateNo } from "../../Redux/serviceSlice";
 const CarDetails = ({setStep}) => {
-    const [plateNo,setPlateNo]=useState("")
-    const [brand,setBrand]=useState("")
+  const dispatch = useDispatch();
+  const {  plateNo, brand } = useSelector((state) => state.services);
     const isButtonDisabled= !plateNo || !brand;
+
+
   return (
     <div>
       <ul className="steps">
@@ -16,7 +19,8 @@ const CarDetails = ({setStep}) => {
       <div className="font-bold text-xl mb-3">Car Plate No.</div>
       <div>
         <input
-        onChange={(e)=>setPlateNo(e.target.value)}
+        value={plateNo}
+        onChange={(e)=>dispatch(setPlateNo(e.target.value.toUpperCase()))}
         className="w-full  bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
          type="text" />
       </div>
@@ -26,7 +30,7 @@ const CarDetails = ({setStep}) => {
                 id="car"
                 name="car"
                 // value={car}
-                onChange={(e)=>setBrand(e.target.value)}
+                onChange={(e)=>dispatch(setBrand(e.target.value))}
                 className="w-full py-3 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
               >
                 <option value="">Select</option>

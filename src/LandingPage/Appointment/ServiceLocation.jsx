@@ -5,18 +5,33 @@ import PropTypes from "prop-types";
 import { IoPartlySunnyOutline } from "react-icons/io5";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedCenter, setStartDate, setTime } from "../../Redux/serviceSlice";
 const ServiceLocation = ({ setStep }) => {
-  const [selectedCenter, setSelectedCenter] = useState(null);
-  const [startDate, setStartDate] = useState();
-  const [time, setTime] = useState();
+  const dispatch = useDispatch();
+  const { selectedCenter, startDate, time } = useSelector((state) => state.services);
+  console.log(selectedCenter)
+  const timeSlots = [
+    "7.00AM",
+    "7.30AM",
+    "8.00AM",
+    "8.30AM",
+    "9.00AM",
+    "9.30AM",
+  ];
   const navigate = useNavigate();
-  const isButtonDisabled = !selectedCenter|| !time || !startDate ;
-  const handleSelect = (center) => {
-    setSelectedCenter(center);
-  };
+  const isButtonDisabled = !selectedCenter || !time || !startDate;
+  
   const changeStep = () => {
-    console.log("clicked");
     setStep("Car");
+  };
+
+  const chunkArray = (array, chunkSize) => {
+    const chunks = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+      chunks.push(array.slice(i, i + chunkSize));
+    }
+    return chunks;
   };
   //   console.log(setStep)
   return (
@@ -35,7 +50,7 @@ const ServiceLocation = ({ setStep }) => {
         className={`border border-gray-400 rounded-lg cursor-pointer text-center py-4 ${
           selectedCenter === "dhaka" ? "bg-gray-300" : ""
         }`}
-        onClick={() => handleSelect("dhaka")}
+        onClick={() => dispatch(setSelectedCenter("dhaka"))}
       >
         VIC Service Center (Dhaka)
         <div>Mirpur 10, Dhaka</div>
@@ -46,7 +61,7 @@ const ServiceLocation = ({ setStep }) => {
         className={`border border-gray-400 rounded-lg cursor-pointer text-center py-4 my-3 ${
           selectedCenter === "chittagong" ? "bg-gray-300" : ""
         }`}
-        onClick={() => handleSelect("chittagong")}
+        onClick={() => dispatch(setSelectedCenter("chittagong"))}
       >
         VIC Service Center (Chittagong)
         <div>Guljar Mor, ChawkBazar, Chittagong</div>
@@ -54,7 +69,7 @@ const ServiceLocation = ({ setStep }) => {
       <div className="font-bold text-xl my-4">Select Date & Time</div>
       <DatePicker
         selected={startDate}
-        onChange={(date) => setStartDate(date)}
+        onChange={(date) => dispatch(setStartDate(date))}
         minDate={new Date()}
         className=" cursor-pointer bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-5 leading-8 transition-colors duration-200 ease-in-out"
       />
@@ -65,23 +80,22 @@ const ServiceLocation = ({ setStep }) => {
               <IoPartlySunnyOutline />
               Morning
             </div>
-            <div className="flex gap-4">
-              <div
-                onClick={() => setTime("7.00AM")}
-                className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${
-                  time === "7.00AM" ? "bg-gray-300" : ""
-                }`}
-              >
-                7.00 AM
-              </div>
-              <div
-                onClick={() => setTime("7.30AM")}
-                className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${
-                  time === "7.30AM" ? "bg-gray-300" : ""
-                }`}
-              >
-                7.30 AM
-              </div>
+            <div>
+              {chunkArray(timeSlots, 2).map((timePair, rowIndex) => (
+                <div key={rowIndex} className="flex gap-2 mb-2">
+                  {timePair.map((timeSlot, index) => (
+                    <div
+                      key={index}
+                      onClick={() => dispatch(setTime(timeSlot))}
+                      className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${
+                        time === timeSlot ? "bg-gray-300" : ""
+                      }`}
+                    >
+                      {timeSlot}
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
           <div>
