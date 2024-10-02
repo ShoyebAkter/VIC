@@ -1,7 +1,7 @@
 
 import { useSelector, useDispatch } from 'react-redux';
 import { addService, removeService } from "../../Redux/serviceSlice";
-const ServiceType = () => {
+const ServiceType = ({setStep}) => {
     const dispatch = useDispatch();
   const selectedServices = useSelector((state) => state.services.selectedServices);
     const isButtonDisabled = selectedServices.length === 0;
@@ -34,7 +34,7 @@ const ServiceType = () => {
     }
     return chunks;
   };
-  console.log(selectedServices)
+//   console.log(selectedServices)
   return (
     <div>
       <ul className="steps">
@@ -67,7 +67,7 @@ const ServiceType = () => {
       </div>
       <button
         disabled={isButtonDisabled}
-        // onClick={changeStep}
+        onClick={()=>setStep("Summary")}
         className={`border w-full border-gray-500 text-center py-2 my-6 rounded-lg bg-yellow-400 font-bold cursor-pointer
         ${isButtonDisabled ? "text-gray-400 bg-yellow-100" : ""}
         `}

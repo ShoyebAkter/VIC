@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ServiceLocation from "./ServiceLocation";
 import CarDetails from "./CarDetails";
 import ServiceType from "./ServiceType";
+import Summary from "./Summary";
 
 const Appointment = () => {
     const [step,setStep]=useState("")
@@ -19,11 +20,12 @@ const Appointment = () => {
         }}
       >
         <div>
-          <div className="text-center ">VIC</div>
-          <div className="font-bold text-center my-6">Book a Service Appointment</div>
+          <div className="text-center text-3xl font-bold">VIC</div>
+          <div className="font-bold text-2xl text-center my-6">Book a Service Appointment</div>
           {step === "" && <ServiceLocation setStep={setStep}/>}
           {step === "Car" ? <CarDetails setStep={setStep}/>  : ""}
           {step === "Service" ? <ServiceType setStep={setStep}/>  : ""}
+          {step === "Summary" ? <Summary setStep={setStep}/>  : ""}
         </div>
       </div>
     </div>
