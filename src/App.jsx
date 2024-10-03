@@ -17,8 +17,8 @@ function App() {
     <AuthProvider>
     <Routes>
         <Route exact path="/" element={<LandingPage />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/signup" element={<SignUp />} />
+        {/* <Route exact path="/login" element={<Login />} />
+        <Route exact path="/signup" element={<SignUp />} /> */}
         <Route exact path="/appointment" element={<Appointment />} />
         <Route exact path="/dashboard" element={<Dashboard />}/>
     </Routes>

@@ -7,6 +7,8 @@ const initialState = {
   time: '',
   plateNo: '',
   brand: '',
+  name: '',
+  email:''
 };
 
 export const serviceSlice = createSlice({
@@ -40,12 +42,18 @@ export const serviceSlice = createSlice({
       setBrand: (state, action) => {
         state.brand = action.payload;
       },
+      setName: (state, action) => {
+        state.name = action.payload;
+      },
+      setEmail: (state, action) => {
+        state.email = action.payload;
+      },
   },
 });
 
 // Export the actions
 export const { addService, removeService, setPlateNo , setSelectedCenter, setStartDate,
-    setTime, setBrand} = serviceSlice.actions;
+    setTime, setBrand, setName, setEmail} = serviceSlice.actions;
 
 // Export the reducer to include in the store
 export default serviceSlice.reducer;

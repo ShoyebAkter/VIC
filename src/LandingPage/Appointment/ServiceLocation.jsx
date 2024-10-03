@@ -6,11 +6,19 @@ import { IoPartlySunnyOutline } from "react-icons/io5";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedCenter, setStartDate, setTime } from "../../Redux/serviceSlice";
+import {
+  setEmail,
+  setName,
+  setSelectedCenter,
+  setStartDate,
+  setTime,
+} from "../../Redux/serviceSlice";
 const ServiceLocation = ({ setStep }) => {
   const dispatch = useDispatch();
-  const { selectedCenter, startDate, time } = useSelector((state) => state.services);
-  console.log(selectedCenter)
+  const { selectedCenter, startDate, time, name, email } = useSelector(
+    (state) => state.services
+  );
+  console.log(selectedCenter);
   const timeSlots = [
     "7.00AM",
     "7.30AM",
@@ -20,8 +28,8 @@ const ServiceLocation = ({ setStep }) => {
     "9.30AM",
   ];
   const navigate = useNavigate();
-  const isButtonDisabled = !selectedCenter || !time || !startDate;
-  
+  const isButtonDisabled = !selectedCenter || !time || !startDate || !email || !name;
+
   const changeStep = () => {
     setStep("Car");
   };
@@ -42,15 +50,52 @@ const ServiceLocation = ({ setStep }) => {
         <li className="step">Service Type</li>
         <li className="step">Summary</li>
       </ul>
+      <div className="font-bold text-xl mt-3">User Information</div>
+      <div className="w-full ">
+        <div className="relative  flex flex-col gap-2">
+          <label
+            for="name"
+            className="leading-7 text-sm text-black font-semibold labelDesign"
+          >
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e)=>dispatch(setName(e.target.value))}
+            className="w-full  bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 py-2 leading-8 transition-colors duration-200 ease-in-out"
+          />
+        </div>
+      </div>
+      <div className="w-full">
+        <div className="relative  flex flex-col gap-2">
+          <label
+            for="email"
+            className="leading-7 text-sm text-black font-semibold labelDesign"
+          >
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e)=>dispatch(setEmail(e.target.value))}
+            className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 px-3 py-2 leading-8 transition-colors duration-200 ease-in-out"
+          />
+        </div>
+      </div>
       <div className="font-bold text-xl my-4">Service Center Location</div>
       <div className="bg-blue-500 px-3 py-1 rounded-xl mb-2 w-1/3 text-center text-white font-semibold">
         VIC Centers
       </div>
       <div
         className={`border border-gray-400 rounded-lg cursor-pointer text-center py-4 ${
-          selectedCenter === "dhaka" ? "bg-gray-300" : ""
+          selectedCenter === "Mirpur 10, Dhaka" ? "bg-gray-300" : ""
         }`}
-        onClick={() => dispatch(setSelectedCenter("dhaka"))}
+        onClick={() => dispatch(setSelectedCenter("Mirpur 10, Dhaka"))}
       >
         VIC Service Center (Dhaka)
         <div>Mirpur 10, Dhaka</div>
@@ -59,9 +104,9 @@ const ServiceLocation = ({ setStep }) => {
       {/* Service Center in Chittagong */}
       <div
         className={`border border-gray-400 rounded-lg cursor-pointer text-center py-4 my-3 ${
-          selectedCenter === "chittagong" ? "bg-gray-300" : ""
+          selectedCenter === "Guljar Mor, ChawkBazar, Chittagong" ? "bg-gray-300" : ""
         }`}
-        onClick={() => dispatch(setSelectedCenter("chittagong"))}
+        onClick={() => dispatch(setSelectedCenter("Guljar Mor, ChawkBazar, Chittagong"))}
       >
         VIC Service Center (Chittagong)
         <div>Guljar Mor, ChawkBazar, Chittagong</div>
@@ -124,6 +169,7 @@ const ServiceLocation = ({ setStep }) => {
           </div>
         </div>
       )}
+
       <button
         disabled={isButtonDisabled}
         onClick={changeStep}
