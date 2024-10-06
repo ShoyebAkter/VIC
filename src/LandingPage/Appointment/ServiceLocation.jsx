@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "./Appointment.css";
 import PropTypes from "prop-types";
 import { IoPartlySunnyOutline } from "react-icons/io5";
 import { MdOutlineWbSunny } from "react-icons/md";
@@ -27,8 +28,16 @@ const ServiceLocation = ({ setStep }) => {
     "9.00AM",
     "9.30AM",
   ];
+  const AfternoonSlots=[
+    "1.00PM",
+    "1.30PM",
+    "2.00PM",
+    "2.30PM",
+    "3.00PM"
+  ]
   const navigate = useNavigate();
-  const isButtonDisabled = !selectedCenter || !time || !startDate || !email || !name;
+  const isButtonDisabled =
+    !selectedCenter || !time || !startDate || !email || !name;
 
   const changeStep = () => {
     setStep("Car");
@@ -64,7 +73,7 @@ const ServiceLocation = ({ setStep }) => {
             id="name"
             name="name"
             value={name}
-            onChange={(e)=>dispatch(setName(e.target.value))}
+            onChange={(e) => dispatch(setName(e.target.value))}
             className="w-full  bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-3 py-2 leading-8 transition-colors duration-200 ease-in-out"
           />
         </div>
@@ -82,7 +91,7 @@ const ServiceLocation = ({ setStep }) => {
             id="email"
             name="email"
             value={email}
-            onChange={(e)=>dispatch(setEmail(e.target.value))}
+            onChange={(e) => dispatch(setEmail(e.target.value))}
             className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 px-3 py-2 leading-8 transition-colors duration-200 ease-in-out"
           />
         </div>
@@ -93,31 +102,24 @@ const ServiceLocation = ({ setStep }) => {
       </div>
       <div
         className={`border border-gray-400 rounded-lg cursor-pointer text-center py-4 ${
-          selectedCenter === "Mirpur 10, Dhaka" ? "bg-gray-300" : ""
+          selectedCenter === "Orlando City in Florida, USA" ? "bg-gray-300" : ""
         }`}
-        onClick={() => dispatch(setSelectedCenter("Mirpur 10, Dhaka"))}
+        onClick={() =>
+          dispatch(setSelectedCenter("Orlando City in Florida, USA"))
+        }
       >
-        VIC Service Center (Dhaka)
-        <div>Mirpur 10, Dhaka</div>
+        <div>Orlando City in Florida, USA</div>
       </div>
 
-      {/* Service Center in Chittagong */}
-      <div
-        className={`border border-gray-400 rounded-lg cursor-pointer text-center py-4 my-3 ${
-          selectedCenter === "Guljar Mor, ChawkBazar, Chittagong" ? "bg-gray-300" : ""
-        }`}
-        onClick={() => dispatch(setSelectedCenter("Guljar Mor, ChawkBazar, Chittagong"))}
-      >
-        VIC Service Center (Chittagong)
-        <div>Guljar Mor, ChawkBazar, Chittagong</div>
-      </div>
       <div className="font-bold text-xl my-4">Select Date & Time</div>
-      <DatePicker
-        selected={startDate}
-        onChange={(date) => dispatch(setStartDate(date))}
-        minDate={new Date()}
-        className=" cursor-pointer bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-5 leading-8 transition-colors duration-200 ease-in-out"
-      />
+      <div className="datepicker">
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => dispatch(setStartDate(date))}
+          minDate={new Date()}
+          className=" cursor-pointer bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-5 leading-8 transition-colors duration-200 ease-in-out"
+        />
+      </div>
       {startDate && (
         <div>
           <div>
@@ -127,7 +129,7 @@ const ServiceLocation = ({ setStep }) => {
             </div>
             <div>
               {chunkArray(timeSlots, 2).map((timePair, rowIndex) => (
-                <div key={rowIndex} className="flex gap-2 mb-2">
+                <div key={rowIndex} className="flex gap-8 mb-2">
                   {timePair.map((timeSlot, index) => (
                     <div
                       key={index}
@@ -148,23 +150,22 @@ const ServiceLocation = ({ setStep }) => {
               <MdOutlineWbSunny />
               Afternoon
             </div>
-            <div className="flex gap-4">
-              <div
-                onClick={() => setTime("1.00PM")}
-                className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${
-                  time === "1.00PM" ? "bg-gray-300" : ""
-                }`}
-              >
-                1.00 PM
-              </div>
-              <div
-                onClick={() => setTime("1.30PM")}
-                className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${
-                  time === "1.30PM" ? "bg-gray-300" : ""
-                }`}
-              >
-                1.30 PM
-              </div>
+            <div>
+            {chunkArray(AfternoonSlots, 2).map((timePair, rowIndex) => (
+                <div key={rowIndex} className="flex gap-8 mb-2">
+                  {timePair.map((timeSlot, index) => (
+                    <div
+                      key={index}
+                      onClick={() => dispatch(setTime(timeSlot))}
+                      className={`border cursor-pointer border-gray-500 rounded-md px-16 py-1 ${
+                        time === timeSlot ? "bg-gray-300" : ""
+                      }`}
+                    >
+                      {timeSlot}
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -65,6 +65,13 @@ const ServiceType = ({setStep}) => {
       ))}
         
       </div>
+      <div>
+        <div className='text-lg font-semibold my-3'>Remarks <span className='text-gray-500'>(optional)</span></div>
+        <div className='text-gray-400 mb-3'>Is there anything specific that you would like to get fixed?<br/> e.g. timing belt issues, alignment issues, etc.</div>
+        <div>
+          <textarea className='border-gray-500 w-full border-2 py-5 rounded-xl'/>
+        </div>
+      </div>
       <button
         disabled={isButtonDisabled}
         onClick={()=>setStep("Summary")}
