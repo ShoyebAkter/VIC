@@ -14,7 +14,7 @@ const Summary = () => {
     name: name,
     email: email,
     selectedCenter:selectedCenter,
-    startDate: startDate,
+    startDate: formattedDate,
     time: time,
     plateNo:plateNo,
     brand:brand,
