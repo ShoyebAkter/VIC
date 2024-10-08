@@ -39,6 +39,13 @@ const handleConfirm=async()=>{
           },
           body: JSON.stringify(bookingInfo),
         }).then((res) => res.json());
+        fetch("https://emapp-sub-server.vercel.app/bookingData", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bookingInfo),
+        }).then((res) => res.json());
 
         navigate('/')
       }
