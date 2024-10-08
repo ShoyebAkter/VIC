@@ -52,7 +52,7 @@ const ServiceLocation = ({ setStep }) => {
   };
   //   console.log(setStep)
   return (
-    <div>
+    <div className="text-white">
       <ul className="steps">
         <li className="step step-primary">Appointment</li>
         <li className="step">Car Details</li>
@@ -64,7 +64,7 @@ const ServiceLocation = ({ setStep }) => {
         <div className="relative  flex flex-col gap-2">
           <label
             for="name"
-            className="leading-7 text-sm text-black font-semibold labelDesign"
+            className="leading-7 text-sm text-white font-semibold labelDesign"
           >
             Name
           </label>
@@ -82,7 +82,7 @@ const ServiceLocation = ({ setStep }) => {
         <div className="relative  flex flex-col gap-2">
           <label
             for="email"
-            className="leading-7 text-sm text-black font-semibold labelDesign"
+            className="leading-7 text-sm text-white font-semibold labelDesign"
           >
             Email
           </label>

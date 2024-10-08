@@ -22,8 +22,8 @@ const Appointment = () => {
       }
     }
   return (
-    <div>
-      <div className="flex justify-between mx-10 mt-4">
+    <div style={{backgroundColor:"#171717" ,color:"white"   }}>
+      <div className="flex justify-between mx-10 pt-4">
         <div onClick={handleBack} className="font-bold cursor-pointer flex items-center gap-1"><IoIosArrowBack /> Back</div>
         <div onClick={()=>navigate('/')} className="font-bold cursor-pointer"> X </div>
       </div>
