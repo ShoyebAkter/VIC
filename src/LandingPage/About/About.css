@@ -47,19 +47,7 @@
     background-color: #f5db0e;
     margin: 5px 0;
   }
-  .aboutTopLine{
-    position: absolute;
-    top: -20px;
-    right: 10px;
-    display: flex;
-    gap: 10px;
-  }
-  .aboutrightline{
-    width: 15px;
-    height: 90px;
-    background-color: #f5db0e;
-    margin: 5px 0;
-  }
+  
   
   @keyframes pulsate {
     0%, 100% {
