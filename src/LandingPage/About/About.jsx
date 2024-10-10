@@ -2,11 +2,7 @@ import "./About.css";
 const About = ({ language }) => {
   return (
     <div id="about" className="about-container">
-      <div className="aboutTopLine">
-        <div className="aboutrightline"></div>
-        <div className="aboutrightline"></div>
-        <div className="aboutrightline"></div>
-      </div>
+      
       <div className="aboutLine">
         <div className="aboutLeftline"></div>
       </div>

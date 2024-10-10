@@ -1,0 +1,49 @@
+.rates-container {
+    background-image: url('/BG6.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Ensure text is visible */
+    padding: 20px; /* Optional padding */
+    position: relative;
+  }
+
+  .aboutTopLine{
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  .aboutrightline{
+    width: 15px;
+    height: 90px;
+    background-color: #f5db0e;
+    margin: 5px 0;
+  }
+  .yellowBG{
+    background-color: #f5db0e;
+    padding: 30px;
+    color: black;
+    text-align: center;
+    width: 425px;
+  }
+  
+  .textColor{
+    color: #f5db0e;
+    font-size: 65.33px;
+    font-family: "Barlow Condensed";
+    font-weight: 500;
+  }
+  .textFont{
+    font-family: "Barlow Condensed";
+    font-size: 60.33px;
+    font-weight: 300;
+  }
+  .textFontImg{
+    font-family: "Barlow Condensed";
+    font-size: 40.33px;
+    font-weight: 500;
+  }
+  .ratesDescription{
+    font-family: "Raleway";
+  }
