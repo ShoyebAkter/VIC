@@ -52,7 +52,7 @@ const ServiceLocation = ({ setStep }) => {
   };
   //   console.log(setStep)
   return (
-    <div className="text-white">
+    <div className="text-white pb-20">
       <ul className="steps">
         <li className="step step-primary">Appointment</li>
         <li className="step">Car Details</li>

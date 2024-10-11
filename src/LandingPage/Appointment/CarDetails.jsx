@@ -48,7 +48,7 @@ const CarDetails = ({ setStep }) => {
   const brandObj = carBrands.find((car) => car.brand === brand);
   // console.log(brandObj)
   return (
-    <div className="">
+    <div className="h-screen">
       <ul className="steps">
         <li className="step step-primary">Appointment</li>
         <li className="step step-primary">Car Details</li>

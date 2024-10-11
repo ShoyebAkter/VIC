@@ -36,7 +36,7 @@ const ServiceType = ({setStep}) => {
   };
 //   console.log(selectedServices)
   return (
-    <div className=''>
+    <div className='h-screen'>
       <ul className="steps">
         <li className="step step-primary">Appointment</li>
         <li className="step step-primary">Car Details</li>
