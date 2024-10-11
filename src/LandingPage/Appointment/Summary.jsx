@@ -53,7 +53,7 @@ const handleConfirm=async()=>{
 }
   
   return (
-    <div>
+    <div className="">
       <ul className="steps">
         <li className="step step-primary">Appointment</li>
         <li className="step step-primary">Car Details</li>
