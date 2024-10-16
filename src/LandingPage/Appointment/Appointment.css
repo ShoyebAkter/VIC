@@ -4,3 +4,8 @@
   .react-datepicker-wrapper{
     width: 400px;
   }
+  .PhoneInputInput {
+    padding: 10px;
+    color: black;
+    background-color: #b1b2b3;
+  }

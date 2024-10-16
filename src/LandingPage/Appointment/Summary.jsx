@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Summary = () => {
   const navigate=useNavigate()
-  const { selectedCenter, startDate, time, plateNo, brand, selectedServices, name, email, carModel, year  } =
+  const { selectedCenter, startDate, time, plateNo, brand, selectedServices, name, email, carModel, year, phoneNum, userLocation  } =
     useSelector((state) => state.services);
   //   console.log(selectedCenter,startDate,time,plateNo,selectedServices,brand)
   const options = { year: "numeric", month: "short", day: "numeric" }; // Custom format
@@ -20,7 +20,9 @@ const Summary = () => {
     brand:brand,
     selectedServices:selectedServices,
     carModel:carModel,
-    year:year
+    year:year,
+    phoneNum:phoneNum,
+    userLocation:userLocation
   };
   // console.log(bookingInfo);
 const handleConfirm=async()=>{

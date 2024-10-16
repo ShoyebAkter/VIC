@@ -86,7 +86,7 @@ const CarDetails = ({ setStep }) => {
         {brand && (
           <div>
             <div>
-            <div className="font-bold text-xl mt-3">Car Model</div>
+              <div className="font-bold text-xl mt-3">Car Model</div>
               <select
                 id="carModel"
                 name="carModel"
@@ -103,7 +103,7 @@ const CarDetails = ({ setStep }) => {
               </select>
             </div>
             <div>
-            <div className="font-bold text-xl mb-3">Car Year</div>
+              <div className="font-bold text-xl mb-3">Car Year</div>
               <select
                 id="carYear"
                 name="carYear"
