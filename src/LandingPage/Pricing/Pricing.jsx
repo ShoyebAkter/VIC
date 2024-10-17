@@ -11,7 +11,11 @@ const Pricing = ({ language }) => {
         <div className="toprightline1"></div>
         <div className="toprightline2"></div>
       </div>
-      <div className="priceTag">Pricing</div>
+      <div className="priceTag">
+        {
+          language ==='es' ?<span>Precios</span>:<span>Pricing </span>
+        }
+      </div>
       <div className="priceDescription">
         {language === "es" ? (
           <span>

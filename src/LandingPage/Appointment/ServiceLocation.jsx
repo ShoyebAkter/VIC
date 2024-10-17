@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 import { IoPartlySunnyOutline } from "react-icons/io5";
 import { MdOutlineWbSunny } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import PhoneInput from 'react-phone-number-input';
-import 'react-phone-number-input/style.css';
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import {
   setEmail,
   setName,
@@ -17,13 +17,50 @@ import {
   setUserLocation,
 } from "../../Redux/serviceSlice";
 import { useState } from "react";
+import { MapContainer, TileLayer, Marker, useMapEvents  } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import axios from "axios";
+
+const defaultIcon = L.icon({
+  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
+function LocationMarker({ setCoordinates, setAddress }) {
+  useMapEvents({
+    click(e) {
+      const { lat, lng } = e.latlng;
+      setCoordinates([lat, lng]);
+
+      // Reverse Geocoding to get the address
+      axios.get(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`)
+        .then((response) => {
+          if (response.data && response.data.display_name) {
+            setAddress(response.data.display_name);
+          } else {
+            setAddress('Address not found');
+          }
+        })
+        .catch((error) => {
+          console.error('Error in reverse geocoding', error);
+          setAddress('Error fetching address');
+        });
+    },
+  });
+
+  return null;
+}
+
 const ServiceLocation = ({ setStep }) => {
-  const [placeObj, setPlaceObj] = useState({});
-   const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
+  const [address, setAddress] = useState("");
+  const [coordinates, setCoordinates] = useState([28.5383, -81.3792]);
+
   const dispatch = useDispatch();
   const { selectedCenter, startDate, time, name, email, userLocation } =
     useSelector((state) => state.services);
-  console.log(selectedCenter);
+  // console.log(selectedCenter);
   const timeSlots = [
     "7.00AM",
     "7.30AM",
@@ -34,41 +71,17 @@ const ServiceLocation = ({ setStep }) => {
   ];
   const AfternoonSlots = ["1.00PM", "1.30PM", "2.00PM", "2.30PM", "3.00PM"];
 
-  const popularPlacesInOrlando = [
-    {
-      placeName: "Walt Disney World Resort",
-      placeLocation: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2774.4904387804227!2d-81.57331492571747!3d28.377190395632475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88dd7ee634caa5f7%3A0xa71e391fd01cf1a0!2sWalt%20Disney%20World%C2%AE%20Resort!5e1!3m2!1sbn!2sbd!4v1728971356315!5m2!1sbn!2sbd" width="400" height="200"  allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-    },
-    {
-      placeName: "Universal Studios Florida",
-      placeLocation: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2771.8129648832873!2d-81.47111712571308!3d28.479380091021095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77ec39415df75%3A0xf985d8fc7734a5a1!2sUniversal%20Studios%20Florida!5e1!3m2!1sbn!2sbd!4v1728971525355!5m2!1sbn!2sbd" width="400" height="200"  allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-    },
-    {
-      placeName: "SeaWorld Orlando",
-      placeLocation: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2773.6043532078997!2d-81.46584092816327!3d28.411046440611912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77e288cd6237f%3A0x997f9e39a3d62bd5!2sSeaWorld%20Orlando!5e1!3m2!1sbn!2sbd!4v1728971588731!5m2!1sbn!2sbd" width="400" height="200" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-    },
-    {
-      placeName: "Orlando Science Center",
-      placeLocation: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.3715759043803!2d-81.37083942570906!3d28.57226728681704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77a9097ea66a3%3A0xb505a1f1f4cd84fc!2sOrlando%20Science%20Center!5e1!3m2!1sbn!2sbd!4v1728971662752!5m2!1sbn!2sbd" width="400" height="200"  allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-    },
-    {
-      placeName: "ICON Park",
-      placeLocation: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2772.7608227064325!2d-81.47186562571464!3d28.443242192653567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77e5301d598c3%3A0x3eea75118971c349!2sICON%20Park!5e1!3m2!1sbn!2sbd!4v1728971708847!5m2!1sbn!2sbd" width="400" height="200"  allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-    },
-    {
-      placeName: "Lake Eola Park",
-      placeLocation: `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11080.500251350559!2d-81.38307776352694!3d28.543629011125297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77ae34d79ceeb%3A0xe5ebfa3195f24aec!2sLake%20Eola%20Park!5e1!3m2!1sbn!2sbd!4v1728971769083!5m2!1sbn!2sbd" width="400" height="200" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`,
-    },
-  ];
-
   const isButtonDisabled =
-    !selectedCenter || !time || !startDate || !email || !name;
+    !selectedCenter || !time || !startDate || !email || !name || !address || !value;
 
   const changeStep = () => {
     setStep("Car");
-    dispatch(setPhoneNum(value))
+    dispatch(setPhoneNum(value));
+    if(address){
+      dispatch(setUserLocation(address))
+    }
   };
-// console.log(value)
+  // console.log(value)
   const chunkArray = (array, chunkSize) => {
     const chunks = [];
     for (let i = 0; i < array.length; i += chunkSize) {
@@ -77,17 +90,25 @@ const ServiceLocation = ({ setStep }) => {
     return chunks;
   };
 
-  const setMap = (e) => {
-    // console.log(e.target.value)
-    dispatch(setUserLocation(e.target.value));
-    const mapIframe = popularPlacesInOrlando.find(
-      (place) => place.placeName === e.target.value
-    );
-    if (mapIframe) {
-      setPlaceObj(mapIframe);
+  const searchAddress = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.get(
+        `https://nominatim.openstreetmap.org/search?format=json&q=${address}`
+      );
+      if (response.data.length > 0) {
+        const { lat, lon } = response.data[0];
+        setCoordinates([parseFloat(lat), parseFloat(lon)]);
+      } else {
+        alert('Location not found');
+      }
+    } catch (error) {
+      console.error('Error fetching location', error);
     }
   };
-  //   console.log(setStep)
+
+  
+    // console.log(address)
   return (
     <div className="text-white pb-20">
       <ul className="steps">
@@ -134,12 +155,13 @@ const ServiceLocation = ({ setStep }) => {
         </div>
       </div>
       <div className="mt-5">
-        <div className="text-sm text-white font-semibold mb-2">Phone Number</div>
+        <div className="text-sm text-white font-semibold mb-2">
+          Phone Number
+        </div>
         <PhoneInput
           defaultCountry="US"
           value={value}
           onChange={setValue}
-          placeholder="Enter phone number"
         />
       </div>
       <div className="font-bold text-xl my-4">Service Center Location</div>
@@ -157,23 +179,33 @@ const ServiceLocation = ({ setStep }) => {
         <div>Orlando City in Florida, USA</div>
       </div>
       <div>
-        <div className="font-bold text-xl mt-3">Select Your Location</div>
-        <select
-          id="location"
-          name="location"
-          value={userLocation}
-          onChange={(e) => setMap(e)}
-          className="w-full my-5 py-3 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
-        >
-          <option value="">Select</option>
-          {popularPlacesInOrlando.map((place) => (
-            <option key={place.placeName} value={place.placeName}>
-              {place.placeName}
-            </option>
-          ))}
-        </select>
+
+
+
+
+
+
+        <div className="font-bold text-xl mt-3">Select Your Location/Street Name</div>
+        <input
+            type="text"
+            className="my-3 w-full h-12 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-7 leading-8 transition-colors duration-200 ease-in-out"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+        {/* <form className="flex gap-5 items-center" onSubmit={searchAddress}>
+          
+          <button className="border-gray-500 text-center px-2 text-black py-2 my-6 rounded-lg bg-yellow-400 font-bold cursor-pointer" type="submit">Search</button>
+        </form> */}
+
+        {/* <MapContainer center={coordinates}  attributionControl={false} zoom={13} style={{ height: "500px", width: "100%" }}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        />
+        <Marker position={coordinates} icon={defaultIcon}></Marker>
+        <LocationMarker setCoordinates={setCoordinates} setAddress={setAddress} />
+      </MapContainer> */}
       </div>
-      <div dangerouslySetInnerHTML={{ __html: placeObj?.placeLocation }} />
       <div className="font-bold text-xl my-4">Select Date & Time</div>
       <div className="datepicker">
         <DatePicker

@@ -10,6 +10,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['react-datepicker'],
+    include: ['react-datepicker','leaflet','react-leaflet'],
   }
 });

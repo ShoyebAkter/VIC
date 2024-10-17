@@ -7,7 +7,9 @@ const Work = ({language}) => {
         <div className="yellowline"></div>
       </div>
       <div className="newdescription">
-        <div className="howToDo">How we do it</div>
+        <div className="howToDo">{
+          language === 'es' ? <span>Cómo lo hacemos</span>:<span>How we do it </span>
+        }</div>
         <div className="myWorkdescription">
           {
             language ==='es'?

@@ -9,10 +9,10 @@ import Footer from '../Footer/Footer'
 import Rates from '../Rates/Rates'
 const LandingPage = () => {
   const [language,setLanguage]=useState("")
-  console.log(language)
+  // console.log(language)
   return (
     <div className='landingPage'>
-      <Header setLanguage={setLanguage}/>
+      <Header language={language} setLanguage={setLanguage}/>
       <Rates language={language}/>
       <About language={language}/>
       <Map language={language}/>

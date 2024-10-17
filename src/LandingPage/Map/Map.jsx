@@ -10,7 +10,11 @@ const Map = ({language}) => {
           <div className="rightline"></div>
         </div>
         <div className="workSection">
-          <div className="workPlace">Where we work</div>
+          <div className="workPlace">
+            {
+              language ==='es' ? <span>Dónde trabajamos</span>:<span>Where we work </span>
+            }
+          </div>
           <div className="workDescription">
           {
             language=== 'es'?

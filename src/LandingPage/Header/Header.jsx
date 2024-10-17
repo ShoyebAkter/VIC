@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import "react-datepicker/dist/react-datepicker.css";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
-const Header = ({ setLanguage }) => {
+const Header = ({language, setLanguage }) => {
 
   useEffect(() => {
     const navbar = document.querySelector(".navbar");
@@ -56,22 +56,22 @@ const Header = ({ setLanguage }) => {
         </div>
         <div className="navbar">
           <a href="#about" className="nav-item highlight">
-            About VIC
+            {language==='es'?"Sobre VIC ":"About VIC"}
           </a>
           <a href="#work" className="nav-item">
-            Where We Work
+           {language === 'es' ? "Donde trabajamos":" Where We Work"}
           </a>
           <a href="#service" className="nav-item highlight">
-            Services
+            {language === 'es' ?"Servicios":"Services"}
           </a>
           <a href="#pricing" className="nav-item highlight">
-            Pricing
+            {language === "es" ?"Precios":"Pricing"}
           </a>
           <div
             className="nav-item button"
             onClick={() => navigate("/appointment")}
           >
-            Book a consultation
+            {language ==="es" ?"Agendar una cita":"Book a consultation"}
           </div>
           {/* <div className="nav-item button" onClick={() => navigate("/login")}>
             Login

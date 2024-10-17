@@ -7,7 +7,9 @@ const About = ({ language }) => {
         <div className="aboutLeftline"></div>
       </div>
       <div className="description">
-        <div className="aboutme">About me</div>
+        <div className="aboutme">{
+          language === 'es' ? <span>Sobre mí</span>:<span>About me </span>
+        }</div>
         <div className="mydescription">
           {language == "es" ? (
             <span>

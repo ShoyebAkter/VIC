@@ -9,13 +9,17 @@ const Rates = ({ language }) => {
         <div className="aboutrightline"></div>
       </div>
       <div className="ratesFirstHeading textColor">
-        First class car attention
+        {
+          language === 'es'?<span>Atención de coche de primera clase </span>: <span>First class car attention</span>
+        }
       </div>
       <div className="ratesSecondHeading textFont">
-        at home & at affordable rates
+        {
+          language ==='es' ? <span>en casa y a precios asequibles</span> : <span> at home & at affordable rates</span>
+        }
       </div>
       <div className="ratesDescription">
-        {language == "es" ? (
+        {language === "es" ? (
           <span>
           Trabajamos como un servicio de entrega, ¡excepto que nos ocupamos de la salud de tu auto!<br />
            Contamos con mecánicos de alto nivel a una fracción del precio que ofrecen los talleres,<br />
