@@ -186,25 +186,25 @@ const ServiceLocation = ({ setStep }) => {
 
 
         <div className="font-bold text-xl mt-3">Select Your Location/Street Name</div>
+        
+        <form className="flex gap-5 items-center" onSubmit={searchAddress}>
         <input
             type="text"
             className="my-3 w-full h-12 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700  px-7 leading-8 transition-colors duration-200 ease-in-out"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
-        {/* <form className="flex gap-5 items-center" onSubmit={searchAddress}>
-          
           <button className="border-gray-500 text-center px-2 text-black py-2 my-6 rounded-lg bg-yellow-400 font-bold cursor-pointer" type="submit">Search</button>
-        </form> */}
+        </form>
 
-        {/* <MapContainer center={coordinates}  attributionControl={false} zoom={13} style={{ height: "500px", width: "100%" }}>
+        <MapContainer center={coordinates}  attributionControl={false} zoom={13} style={{ height: "500px", width: "100%" }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         <Marker position={coordinates} icon={defaultIcon}></Marker>
         <LocationMarker setCoordinates={setCoordinates} setAddress={setAddress} />
-      </MapContainer> */}
+      </MapContainer>
       </div>
       <div className="font-bold text-xl my-4">Select Date & Time</div>
       <div className="datepicker">
